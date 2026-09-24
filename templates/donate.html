@@ -51,7 +51,7 @@
 #}
 
 
-{% set monthly_donations_string = <comma_string value={monthly_donations} /> %}
+{% set monthly_donations_string = monthly_donations | num_format %}
 
 <div class="donate-page">
 
@@ -88,7 +88,7 @@
             {% if tier.sponsor_tier %}
                 {% continue %}
             {% endif %}
-            {% set amount_string = <comma_string value={tier.amount} /> %}
+            {% set amount_string = tier.amount | num_format %}
             {% if tier.every_org_link %}
                 {% set donate_link = tier.every_org_link %}
             {% elif tier.stripe_link %}
@@ -133,7 +133,7 @@ These tiers exist for individuals or organizations that want to support Bevy in 
         {% if not tier.sponsor_tier %}
             {% continue %}
         {% endif %}
-        {% set amount_string = <comma_string value={tier.amount} /> %}
+        {% set amount_string = tier.amount | num_format %}
         {% if tier.every_org_link %}
             {% set donate_link = tier.every_org_link %}
         {% elif tier.stripe_link %}
