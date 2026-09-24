@@ -16,8 +16,6 @@ build_search_index = true
 generate_feeds = true
 feed_limit = 1000
 
-taxonomies = [{ name = "news", feed = true }]
-
 [markdown.highlighting]
 
 theme = "bevy-syntax-theme-dark"
