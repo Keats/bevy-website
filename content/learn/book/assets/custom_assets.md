@@ -39,7 +39,7 @@ struct Card {
 
 This allows methods like [`AssetServer::is_loaded_with_dependencies`] to track not only your custom asset, but also any other assets it references.
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 
 This tracking is done through the [`VisitAssetDependencies`] trait, which can be derived independently from [`Asset`].
 So in the above example, we could have:
@@ -64,7 +64,7 @@ struct Effect {
 
 [`Asset`]: https://docs.rs/bevy/latest/bevy/asset/trait.Asset.html
 [`VisitAssetDependencies`]: https://docs.rs/bevy/latest/bevy/asset/trait.VisitAssetDependencies.html
-{% end %}
+{% </callout> %}
 
 Finally, in your `main` function, call `init_asset` with your asset type to register it:
 

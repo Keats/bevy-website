@@ -16,9 +16,9 @@ Ultimately, Bevy is a tool that's designed to help people make cool games. Just 
 
 If you're using Bevy, we want to hear from you! Don't hesitate to ask for support on [GitHub Discussions], [Discord], or [Reddit]. Once you've made something that you're proud of, feel free to drop a link, video, or screenshot in `#showcase` on [Discord]! If you release a game on [itch.io] we'd be thrilled if you tagged it with `bevy`.
 
-{% callout() %}
+{% <callout> %}
 Think you've found a bug, missing documentation, or a feature that would help you make better games? [File an issue](https://github.com/bevyengine/bevy/issues/new/choose) on the main `bevy` repo! Take a look at the chapter on [Reporting Issues](@/learn/contribute/helping-out/reporting-issues.md) to learn more.
-{% end %}
+{% </callout> %}
 
 [GitHub Discussions]: https://github.com/bevyengine/bevy/discussions
 [Discord]: https://discord.gg/bevy
@@ -35,9 +35,9 @@ If you do have specific skills (e.g. advanced familiarity with `unsafe` code, re
 
 Not even our Project Lead and Maintainers are exempt from reviews! By giving feedback on this work (and related supporting work), you can help us make sure our releases are both high-quality and timely.
 
-{% callout() %}
+{% <callout> %}
 Interested in reviewing, but don't know where to start? Check out [Reviewing Pull Requests](@/learn/contribute/helping-out/reviewing-pull-requests.md)!
-{% end %}
+{% </callout> %}
 
 ## Joining a Working Group
 
@@ -47,9 +47,9 @@ You should consider joining a working group if you're interested in contributing
 
 There are no special requirements to participate in a working group — no applications, formal membership list, or even leadership. Anyone can help, and you should expect to compromise and work together with others to bring your shared vision to life. Working groups are *spaces*, not clubs.
 
-{% callout() %}
+{% <callout> %}
 Anyone can start a working group! Check out [Working Groups](@/learn/contribute/project-information/working-groups.md) for more information about the process and requirements.
-{% end %}
+{% </callout> %}
 
 ## Contributing Code
 
@@ -57,9 +57,9 @@ We love getting code contributions from the community, and there's plenty of wor
 
 If you already know what you want to work on, all you have to do is make your changes and submit a pull request! The page on [Opening Pull Requests](@/learn/contribute/helping-out/opening-pull-requests.md) is there to help if you get stuck.
 
-{% callout() %}
+{% <callout> %}
 When working on the engine's code, it's a good idea to introduce yourself in the `#engine-dev` channel on [Discord](https://discord.gg/bevy) and tell people about your plans. Communicating your progress early and often can help you avoid headaches and disagreements during code review.
-{% end %}
+{% </callout> %}
 
 ## Writing docs and examples
 
@@ -71,9 +71,9 @@ You can improve Bevy's ecosystem by building your own Bevy plugins and crates, o
 
 Non-trivial, reusable functionality that works well by itself is a good candidate for a plugin. If it's closer to a snippet or design pattern, you may want to share it with the community on [Discord], [Reddit], or [GitHub Discussions] instead.
 
-{% callout() %}
+{% <callout> %}
 Check out our [plugin guidelines](@/learn/quick-start/plugin-development.md) for helpful tips and patterns!
-{% end %}
+{% </callout> %}
 
 ## Organizing Issues and Pull Requests
 

@@ -80,10 +80,10 @@ fn check_and_update_position(mut query: Query<(Entity, Mut<Position>)>) {
 }
 ```
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 Performance-wise, there's no real difference between using query filters and using the change detection methods.
 The [`Added<T>`] and [`Changed<T>`] query filters cause the iterator to skip over entities that have not changed, but they don't reduce the number of entities that get fetched by the query.
-{% end %}
+{% </callout> %}
 
 [`Ref<T>`]: https://docs.rs/bevy/latest/bevy/ecs/change_detection/struct.Ref.html
 [`Mut<T>`]: https://docs.rs/bevy/latest/bevy/ecs/change_detection/struct.Mut.html
@@ -119,13 +119,13 @@ fn detect_removed_position(mut removed: RemovedComponents<Position>) {
 }
 ```
 
-{% callout(type="warning") %}
+{% <callout type="warning"> %}
 It's generally better to use an [`OnRemove`] observer or a component hook to detect removals.
 Using this has a number of advantages over [`RemovedComponents`]:
 
 - You get access to the component values being removed.
 - [`RemovedComponents`] can miss component removals when used in [`FixedUpdate`].
-{% end %}
+{% </callout> %}
 
 [`RemovedComponents`]: https://docs.rs/bevy/latest/bevy/ecs/lifecycle/struct.RemovedComponents.html
 [`OnRemove`]: https://docs.rs/bevy/latest/bevy/ecs/component/trait.Component.html#adding-components-hooks
@@ -187,10 +187,10 @@ Change detection applies to each ECS system separately.
 A system will see whatever changes occurred since the last time the system ran.
 This includes systems that only run sometimes (such as when using [states] or [run conditions]), so you do not need to worry about "missing" changes.
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 Internally, Bevy stores an "engine tick count" with every component and resource that marks the last time that it was updated.
 When a system calls `.is_changed()`, it compares the tick count of the component with the tick count of the last time the system was run.
-{% end %}
+{% </callout> %}
 
 One thing to beware of is potential 1-frame delay, if the system that is causing the change runs after the system that is checking for changes.
 You may need to pay attention to how you [run schedules] or use [explicit system ordering] to prevent this.

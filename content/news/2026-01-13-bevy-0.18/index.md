@@ -30,7 +30,7 @@ Since our last release a few months ago we've added a _ton_ of new features, bug
 
 ## Atmosphere Occlusion and PBR Shading
 
-{{ heading_metadata(authors=["@mate-h"] prs=[21383]) }}
+{{ <heading_metadata authors={["@mate-h"]} prs={[21383]} /> }}
 
 The procedural atmosphere now affects how light reaches objects in your scene! Sunlight automatically picks up the right colors as it travels through the atmosphere, appearing orange or red when the sun is closer to the horizon.
 
@@ -44,10 +44,10 @@ Check out the updated [`atmosphere` example] to see it in action!
 
 ## Generalized Atmospheric Scattering Media
 
-{{ heading_metadata(authors=["@ecoskey"] prs=[20838]) }}
+{{ <heading_metadata authors={["@ecoskey"]} prs={[20838]} /> }}
 
 ![generalized atmosphere](generalized_atmosphere.jpg)
-{{ media_caption(text="A Mars-like atmosphere rendered in Bevy 0.18") }}
+{{ <media_caption text="A Mars-like atmosphere rendered in Bevy 0.18" /> }}
 
 Until now, Bevy's atmospheric scattering system has been fast and beautiful, but
 not very customizable. There's only a limited number of ways to customize the
@@ -103,7 +103,7 @@ fn setup_camera(
 
 ## Solari Improvements
 
-{{ heading_metadata(authors=["@JMS55", "@SparkyPotato"] prs=[21391, 21355, 21810]) }}
+{{ <heading_metadata authors={["@JMS55", "@SparkyPotato"]} prs={[21391, 21355, 21810]} /> }}
 
 ![solari specular](solari_specular.jpg)
 
@@ -121,18 +121,16 @@ For the full list of details, check out the author's [full blog post](https://jm
 
 ## PBR Shading Fixes
 
-{{ heading_metadata(authors=["@aevyrie"] prs=[22372, 22454]) }}
+{{ <heading_metadata authors={["@aevyrie"]} prs={[22372, 22454]} /> }}
 
 Bevy's PBR material aims to provide a standardized and predictable physical shading model. We landed our initial PBR shader about _four years_ ago. It has generally served us well, and it has improved substantially over time, but it had a couple of quirks that definitely felt ... off at times.
 
 Bevy's materials have sometimes been described as "overly glossy" or "overly bright", and people who knew a bit more about shaders often blamed someone named Fresnel. Fortunately, we've _finally_ isolated the core problems and fixed them. The results should hopefully speak for themselves!
 
-{{ compare_slider(
-    left_title="Before Fixes",
-    left_image="render_before.jpg",
-    right_title="After Fixes",
-    right_image="render_after.jpg"
-) }}
+{{ <compare_slider left_title="Before Fixes"
+    left_image="render_before.jpg"
+    right_title="After Fixes"
+    right_image="render_after.jpg" /> }}
 
 There were two core issues:
 
@@ -143,7 +141,7 @@ For more comparison images, see the two linked PRs above. We can all rest easy n
 
 ## Fullscreen Material
 
-{{ heading_metadata(authors=["@IceSentry"] prs=[20414]) }}
+{{ <heading_metadata authors={["@IceSentry"]} prs={[20414]} /> }}
 
 In previous versions of Bevy, the only way to define custom fullscreen effects was to define a new low-level render feature. This approach is maximally flexible, but it also sets the complexity bar overly high for common use cases.
 
@@ -179,7 +177,7 @@ Check out our new [`fullscreen_material`] example for a complete illustration of
 
 ## More Standard Widgets
 
-{{ heading_metadata(authors=["@viridia", "@PPakalns"] prs=[21636, 21743, 21294]) }}
+{{ <heading_metadata authors={["@viridia", "@PPakalns"]} prs={[21636, 21743, 21294]} /> }}
 
 We are continuing to flesh out the collection of standard widgets first introduced in
 **Bevy 0.17**. Note that Bevy's standard widgets are "logical widgets". They are "unthemed".
@@ -235,7 +233,7 @@ in a fully backward compatible way:
 
 ## Bevy Feathers Widget: Color Plane
 
-{{ heading_metadata(authors=["@viridia"] prs=[21743]) }}
+{{ <heading_metadata authors={["@viridia"]} prs={[21743]} /> }}
 
 In our last release we introduced [Bevy Feathers](/news/bevy-0-17/#bevy-feathers-widgets-for-tooling-experimental), an experimental new widget library for building tooling (such as the upcoming Bevy Editor).
 
@@ -249,7 +247,7 @@ red vs. blue, and so on.
 
 ## First-Party Camera Controllers
 
-{{ heading_metadata(authors=["@alice-i-cecile", "@syszery"] prs=[20215, 21450, 21520]) }}
+{{ <heading_metadata authors={["@alice-i-cecile", "@syszery"]} prs={[20215, 21450, 21520]} /> }}
 
 To understand and interact with a scene, you must look at it through the lens of a camera. But there are many ways to control a camera!
 
@@ -306,7 +304,7 @@ for large-scale or high-resolution 2D scenes.
 
 ## Automatic Directional Navigation
 
-{{ heading_metadata(authors=["@jbuehler23"] prs=[21668, 22340]) }}
+{{ <heading_metadata authors={["@jbuehler23"]} prs={[21668, 22340]} /> }}
 
 Bevy now supports **automatic directional navigation** for UI elements! With a bit of global setup,
 all of your UI elements can now be navigated between using gamepads or arrow keys.
@@ -374,7 +372,7 @@ You may also call `auto_generate_navigation_edges()` directly, if you have multi
 
 ## Cargo Feature Collections
 
-{{ heading_metadata(authors=["@cart"] prs=[21472]) }}
+{{ <heading_metadata authors={["@cart"]} prs={[21472]} /> }}
 
 Historically, Bevy developers have lived one of two lifestyles:
 
@@ -414,7 +412,7 @@ Developers can now define their own high-level cargo feature profiles from these
 
 ## Font Variations
 
-{{ heading_metadata(authors=["@ickshonpe", "@hansler"] prs=[19020, 21555, 21559, 22038]) }}
+{{ <heading_metadata authors={["@ickshonpe", "@hansler"]} prs={[19020, 21555, 21559, 22038]} /> }}
 
 **Bevy 0.18** brings more control over how your fonts are expressed!
 
@@ -483,7 +481,7 @@ Note that OpenType font features are only available for `.otf` fonts that suppor
 
 ## Pick-able Text Sections
 
-{{ heading_metadata(authors=["@ickshonpe"] prs=[22047]) }}
+{{ <heading_metadata authors={["@ickshonpe"]} prs={[22047]} /> }}
 
 Individual text sections belonging to UI text nodes are now pickable, allowing them to be selected,
 and can be given observers to respond to user interaction.
@@ -493,7 +491,7 @@ and allows users to create mouse-over tooltips for specific keywords in their ga
 
 ## Safe Mutable Access To Multiple Arbitrary Components
 
-{{ heading_metadata(authors=["@hymm"] prs=[21780]) }}
+{{ <heading_metadata authors={["@hymm"]} prs={[21780]} /> }}
 
 When working with an ECS, the most efficient way to access data is to query the same components across multiple entities in a batch:
 
@@ -535,7 +533,7 @@ relying on other methods to ensure soundness with a lower performance cost.
 
 ## glTF Extensions
 
-{{ heading_metadata(authors=["@christopherbiscardi"] prs=[22106]) }}
+{{ <heading_metadata authors={["@christopherbiscardi"]} prs={[22106]} /> }}
 
 [glTF] is a popular open format for 3D models and scenes, and serves as Bevy's primary 3D format.
 When making games however, simply relying on the built-in data fields for your objects is not enough.
@@ -597,7 +595,7 @@ Any third party software that writes component data into a glTF file can use Ske
 
 ## Short-Type-Path Asset Processors
 
-{{ heading_metadata(authors=["@andriyDev"] prs=[21339]) }}
+{{ <heading_metadata authors={["@andriyDev"]} prs={[21339]} /> }}
 
 Asset processors allow manipulating assets at "publish-time" to convert them into a more optimal
 form when loading the data at runtime. This can either be done using a default processor, which
@@ -640,7 +638,7 @@ manipulate, we now also support using the "short type path" of the asset. This w
 
 ## Easy Screenshot and Video Recording
 
-{{ heading_metadata(authors=["@mockersf"] prs=[21235, 21237]) }}
+{{ <heading_metadata authors={["@mockersf"]} prs={[21235, 21237]} /> }}
 
 Making an awesome, beautiful game is only half the battle: you need to be able to show it to people too!
 
@@ -662,7 +660,7 @@ To enable it, toggle the `screenrecording` feature in the `bevy_dev_tools` crate
 
 ## Remove Systems from Schedules
 
-{{ heading_metadata(authors=["@hymm"] prs=[20298]) }}
+{{ <heading_metadata authors={["@hymm"]} prs={[20298]} /> }}
 
 Previously, the only way to prevent a scheduled system from running was to use [run conditions].
 This works well for dynamically toggling whether or not a system runs, but comes with a tiny overhead
@@ -691,7 +689,7 @@ app.remove_systems_in_set(MySet, ScheduleCleanupPolicy::RemoveSetAndSystems);
 
 ## UI Nodes Can Ignore Parent Scroll Position
 
-{{ heading_metadata(authors=["@PPakalns"] prs=[21648]) }}
+{{ <heading_metadata authors={["@PPakalns"]} prs={[21648]} /> }}
 
 We've added the [`IgnoreScroll`] component, which controls whether a UI element ignores its parent’s `ScrollPosition` along specific axes.
 
@@ -702,7 +700,7 @@ This can be used to achieve basic sticky row and column headers in scrollable UI
 
 ## Interpolation for Colors and Layout
 
-{{ heading_metadata(authors=["@viridia"] prs=[21633]) }}
+{{ <heading_metadata authors={["@viridia"]} prs={[21633]} /> }}
 
 Bevy's [`StableInterpolate`] trait is a lovely foundation for animation,
 but sadly there's one important type that it doesn't work with:
@@ -731,7 +729,7 @@ which can fail if the control points are not in the same units / color space.
 
 ## Seekable Asset Readers
 
-{{ heading_metadata(authors=["@andriyDev", "@cart"] prs=[22182]) }}
+{{ <heading_metadata authors={["@andriyDev", "@cart"]} prs={[22182]} /> }}
 
 In **Bevy 0.15**, we replaced the `AsyncSeek` super trait on `Reader` with `AsyncSeekForward`. This
 allowed our `Reader` trait to apply to more cases (e.g., it could allow cases like an HTTP request,
@@ -747,8 +745,8 @@ seekable_reader.seek(SeekFrom::Start(10)).await?;
 
 This enables an `AssetLoader` that needs seeking to either fail, or select a suitable fallback behavior for its use case (such as reading into a `Vec`, which is seekable).
 
-{{ support_bevy() }}
+{{ <support_bevy /> }}
 
-{{ contributors(version="0.18") }}
+{{ <contributors version="0.18" /> }}
 
 For those interested in a complete changelog, you can see the entire log (and linked pull requests) via the [relevant commit history](https://github.com/bevyengine/bevy/compare/v0.17.0...v0.18.0).

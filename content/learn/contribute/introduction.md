@@ -70,11 +70,11 @@ The [GitHub organization] has 2 primary repositories:
 [`bevy-website`]: https://github.com/bevyengine/bevy-website
 [official website]: https://bevy.org
 
-{% callout() %}
+{% <callout> %}
 These repositories are owned and managed by [The Bevy Foundation], a non-profit charity dedicated to keeping Bevy free for everyone everywhere, until the end of time itself!
 
 [The Bevy Foundation]: https://bevy.org/foundation/
-{% end %}
+{% </callout> %}
 
 The `bevy` repository itself contains many smaller subcrates. Several of them can be used by themselves and almost all of them can be modularly replaced. Feel free to dig around and find one that interests you!
 

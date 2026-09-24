@@ -48,7 +48,7 @@ If you want a broader map of Bevy's documentation ecosystem (quick start guide, 
 
 If you're evaluating whether Bevy is the right fit for your project, read [Is Bevy Right for Your Project?](@/learn/book/is-bevy-right-for-your-project/_index.md).
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 
 ### Corrections and Extensions
 
@@ -57,4 +57,4 @@ Like any good piece of documentation, the Bevy Book is continuously updated.
 If you spot an issue, [submit a quick PR](https://github.com/bevyengine/bevy-website/pulls).
 The files used to create the book are just Markdown; you can find them in `content/learn/book`.
 If you'd like to refactor something or add a new section, read our [Contributing Guide](https://bevy.org/learn/contribute/introduction/) and we'd be happy to welcome you to the flock!
-{% end %}
+{% </callout> %}

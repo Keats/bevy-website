@@ -29,7 +29,7 @@ Bevy is [built in the open by volunteers](https://bevy.org/learn/contribute/intr
 
 For a more in-depth introduction, check out the [Introducing Bevy](/news/introducing-bevy/) blog post.
 
-{% callout(type="warning") %}
+{% <callout type="warning"> %}
 
 ## Stability Warning
 
@@ -42,6 +42,6 @@ Use only if you are willing to work in this environment.
 If you are currently trying to pick an engine for your _Next Big Project™_, we recommend that you check out [Godot Engine](https://godotengine.org).
 It is currently much more feature-complete and stable.
 Plus, it is also free, open-source, and [scriptable with Rust](https://github.com/godot-rust/gdext)!
-{% end %}
+{% </callout> %}
 
 Phew! If you haven't been scared away yet, let's move on to learning some Bevy!

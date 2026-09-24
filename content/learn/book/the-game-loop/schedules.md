@@ -101,7 +101,7 @@ If enough time has passed (as calculated by Bevy calling the [`Time<Fixed>::over
 Because of the way Bevy checks this, it's possible for [`FixedMain`] to run multiple times during a single [`RunFixedMainLoop`] if multiple "ticks" have passed.
 Likewise, if frame generation happens faster than the "tick"-rate, [`RunFixedMainLoop`] might not run [`FixedMain`] at all during a specific frame.
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 #### When to Use Fixed Schedules
 
 Placing a system inside of a "fixed" schedule (like [`FixedUpdate`]) means that it will be evaluated at a consistent rate (64 times a second by default, to be exact).
@@ -124,7 +124,7 @@ For gameplay systems needing to run at a fixed rate (like physics, AI behaviors,
 [`FixedUpdate`]: https://docs.rs/bevy/latest/bevy/prelude/struct.FixedUpdate.html
 [`Update`]: https://docs.rs/bevy/latest/bevy/app/struct.Update.html
 
-{% end %}
+{% </callout> %}
 
 [`FixedFirst`]: https://docs.rs/bevy/latest/bevy/prelude/struct.FixedFirst.html
 [`FixedPreUpdate`]: https://docs.rs/bevy/latest/bevy/prelude/struct.FixedPreUpdate.html

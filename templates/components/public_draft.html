@@ -1,7 +1,7 @@
 {% component warning(section, current=true) %}
   {% if section and section.extra.public_draft %}
     {% set public_draft = section.extra.public_draft %}
-    {% set issue = public_draft / 1 %}
+    {% set issue = public_draft %}
     {% if current %}
       <h1 class="warning draft-header">Draft Page</h1>
       <div>

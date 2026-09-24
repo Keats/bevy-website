@@ -21,13 +21,13 @@ In Bevy, the single, authoritative version of every asset of a type `A` is store
 When we want to use these assets in our game, we store a [`Handle<A>`] within the relevant component that references the stored asset data.
 This means that components like [`Mesh3d`] or [`Sprite`] aren't actually storing the asset data themselves; they're just storing a reference to it.
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 
 Loading an asset from the same path does not create a new copy of the data from disk by loading it again;
 these calls are deduplicated by [`AssetPath`].
 
 [`AssetPath`]: https://docs.rs/bevy/latest/bevy/asset/struct.AssetPath.html
-{% end %}
+{% </callout> %}
 
 Various systems then read these component-storing handles, look up the asset they're pointing to, and then use that information to do things like "render them" or "determine collisions".
 
@@ -73,7 +73,7 @@ fn spawn_bevy_bird_idiomatic(mut commands: Commands, asset_server: Res<AssetServ
 }
 ```
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 
 Bevy looks for assets inside of the `assets` folder.
 During development, this should be located inside your project folder, in the same folder as the `Cargo.toml` of your binary crate.
@@ -82,7 +82,7 @@ When shipping your game, this should be an `assets` folder in the same folder as
 This behavior is a reasonable choice for most projects.
 However, this behavior can be overridden by setting the `BEVY_ASSET_ROOT` environment variable for your program or setting `AssetPlugin::file_path`.
 
-{% end %}
+{% </callout> %}
 
 Asset loading is, by default, done asynchronously.
 This means that the program will not stop to wait for the asset to fully load.
@@ -93,12 +93,12 @@ Most games get around this behavior by creating a loading screen that plays whil
 You can create this functionality in Bevy using [`AssetServer::load_state`], a method that allows you to check the load state of an asset, along with other [`AssetServer`] methods that provide similar functionality.
 A version of the same functionality (without playing a separate screen) can be seen in the [Loading Assets In Advance](@/learn/book/assets/lifetimes.md#waiting-for-asset-loading) page.
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 
 While loading data as an asset is more complex than simply hardcoding it, doing so unlocks [asset hot reloading](@/learn/book/development-practices/hot-reloading.md).
 This allows us to change the asset file during testing and see those changes reflected in real time.
 
-{% end %}
+{% </callout> %}
 
 [`Handle<Image>`]: https://docs.rs/bevy/latest/bevy/asset/struct.Handle.html
 [`AssetServer::load_state`]: https://docs.rs/bevy/latest/bevy/asset/struct.AssetServer.html#method.load_state
@@ -154,7 +154,7 @@ fn fade_enemy_image_asset(
 
 [`Image`]: https://docs.rs/bevy/latest/bevy/render/texture/struct.Image.html
 
-{% callout(type="warning") %}
+{% <callout type="warning"> %}
 
 Rendering is one of the most important consumers of assets in Bevy: using the images and models that we load to make pretty pixels.
 In order to do so, we need to load it into VRAM on the GPU; not ordinary RAM on the CPU.
@@ -166,7 +166,7 @@ This behavior can be configured by setting [`RenderAssetUsages`] when loading as
 [`RenderAsset`]: https://docs.rs/bevy/latest/bevy/render/render_asset/trait.RenderAsset.html
 [`RenderAssetUsages`]: https://docs.rs/bevy/latest/bevy/asset/struct.RenderAssetUsages.html
 
-{% end %}
+{% </callout> %}
 
 ## Handles Are Reference-Counted
 

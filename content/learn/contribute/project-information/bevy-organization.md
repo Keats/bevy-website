@@ -7,9 +7,9 @@ weight = 2
 
 The Bevy Organization is the group of people responsible for stewarding the Bevy Project. It handles things like merging pull requests, choosing project direction, managing bugs / issues / feature requests, running Bevy's website, controlling access to secrets, defining, and enforcing best practices, etc.
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 Everyone is welcome, and encouraged, to contribute to Bevy, whether or not they're a Bevy Organization member. Community contributors (this means you) are encouraged to freely open issues, submit pull requests, and review pull requests.
-{% end %}
+{% </callout> %}
 
 The Bevy Organization is currently broken up into the following roles:
 
@@ -39,9 +39,9 @@ To make it easy to reach consensus, hold a high quality bar, and synchronize vis
 
 If you are interested in a Maintainer role and believe you meet these criteria, reach out to the Project Lead or one of our Maintainers. One month after every Bevy release Maintainers and the Project Lead will evaluate the need for new roles, review candidates, and vote. Bringing in a new Maintainer requires unanimous support from the Project Lead and all Maintainers.
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 Check out the [Bevy People](/community/people/#the-bevy-organization) page for the current list of Maintainers.
-{% end %}
+{% </callout> %}
 
 ## Subject Matter Expert (SME)
 
@@ -68,9 +68,9 @@ To make it easy to reach consensus, hold a high quality bar, and synchronize vis
 
 If you are interested in a SME role and believe you meet these criteria, reach out to our Project Lead or one of our Maintainers. One month after every Bevy release Maintainers and the Project Lead will evaluate the need for new roles, review candidates, and vote. Bringing in a new SME requires the support of the Project Lead and half of the Maintainers (however unanimous support is preferred).
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 Check out the [Bevy People](https://bevy.org/community/people/#the-bevy-organization) page for the current list of SMEs.
-{% end %}
+{% </callout> %}
 
 ## Bevy Org Member / Triage Team
 
@@ -94,6 +94,6 @@ To resolve these issues, we plan on building in "role rotation". What this looks
 
 Additionally, if you are currently holding a role that you can no longer "meaningfully engage with", please reach out to the Project Lead and Maintainers about rotating out. If you hold a role but don't engage with it, you are preventing other qualified people from driving the project forward.
 
-{% callout() %}
+{% <callout> %}
 Leaving a role doesn't need to be permanent. If you need to rotate out because your life is currently busy with work / life / school / etc, but later you find more time, we can discuss rotating back in!
-{% end %}
+{% </callout> %}

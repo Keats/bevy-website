@@ -1,6 +1,4 @@
-{%-if not language-%}
-  {%-set language = "rs"-%}
-{%-endif-%}
+{% component file_code_block(file, language="rs", anchor="") %}
 {%-set code = load_data(path="learning-code-examples/examples/" ~ file)-%}
 {%-if anchor-%}
   {%-set code_lines = code | split(pat="\n")-%}
@@ -8,10 +6,10 @@
   {%-set in_anchor = false-%}
   {%-set hidden_line = false-%}
   {%-for line in code_lines-%}
-    {%-if line is ending_with("// ANCHOR_END: " ~ anchor)-%}
+    {%-if line is ending_with(pat="// ANCHOR_END: " ~ anchor)-%}
       {%-set_global in_anchor = false-%}
     {%-endif-%}
-    {%-if line is ending_with("// HIDE")-%}
+    {%-if line is ending_with(pat="// HIDE")-%}
       {%-set_global hidden_line = true-%}
     {%-else-%}
       {%-set_global hidden_line = false-%}
@@ -20,7 +18,7 @@
     {%-set_global code = code ~ line ~ "
 "-%}
     {%-endif-%}
-    {%-if line is ending_with("// ANCHOR: " ~ anchor)-%}
+    {%-if line is ending_with(pat="// ANCHOR: " ~ anchor)-%}
       {%-set_global in_anchor = true-%}
     {%-endif-%}
   {%-endfor-%}
@@ -28,3 +26,4 @@
 ```{{language}}
 {{code-}}
 ```
+{% endcomponent %}

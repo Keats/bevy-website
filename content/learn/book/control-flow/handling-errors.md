@@ -45,7 +45,7 @@ You can check your own code for these panicking functions and remove them, but s
 The only way to make sure a function won't panic is to read and understand the source code.
 Crates like Bevy document which functions they provide could call panics internally and in what scenarios they will panic.
 
-{% callout() %}
+{% <callout> %}
 
 Additionally, there are some clippy lints that can help catch _some_ panics, but not all of them.
 Here's an example of a few and how to configure them in a workspace.
@@ -61,7 +61,7 @@ panic = "warn"
 todo = "warn"
 ```
 
-{% end %}
+{% </callout> %}
 
 ## Recoverable Failures
 
@@ -304,12 +304,12 @@ This works because Bevy contains a global, configurable error handler.
 Bevy's prelude contains a custom [`Result`](https://docs.rs/bevy/latest/bevy/ecs/error/type.Result.html) type alias that amounts to `Result<(), BevyError>` in the default case.
 This can be used as the return type from systems.
 
-{% callout() %}
+{% <callout> %}
 
 Bevy's built-in error type [`BevyError`](https://docs.rs/bevy/latest/bevy/ecs/error/struct.BevyError.html) has a blanket `From` impl for any type that implements Rust’s [`Error`](https://doc.rust-lang.org/std/error/trait.Error.html) trait.
 This means you can write your own errors either manually or with a higher-level crate like [`thiserror`](https://docs.rs/thiserror/latest/thiserror/), and use those custom errors alongside `?` to return them in a system that returns Bevy's `Result` as we cover next.
 
-{% end %}
+{% </callout> %}
 
 Consider the `Query::single` case, which returns a `Result`.
 In a system that returns `Result`, we can return errors by explicitly returning `Err` or using `?` on `Result`s.

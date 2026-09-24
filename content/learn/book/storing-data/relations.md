@@ -99,13 +99,13 @@ fn spawn_entity_with_children(mut commands: Commands) {
 }
 ```
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 The `Children::spawn` call uses an advanced feature called a "bundle effect".
 This is an additional side-effect that happens after the `Children` component is inserted.
 In this case, the child entities are actually created once the component is inserted.
 
 Bundle effects also work for `insert()` as well as `spawn()`.
-{% end %}
+{% </callout> %}
 
 The [`children!`] macro can make this code even more concise:
 
@@ -126,7 +126,7 @@ fn spawn_entity_with_children(mut commands: Commands) {
 }
 ```
 
-{% callout(type="warning") %}
+{% <callout type="warning"> %}
 **Caution**
 
 In this shorter syntax, the parentheses around each child entity can trip you up if you are not careful.
@@ -134,7 +134,7 @@ The expression `(Wheel, Color::Black)` adds a single child entity with two compo
 If you instead wrote `Wheel, Color::Black` (without the parentheses) that would add two separate entities, each with just one component.
 
 There are also some advanced scenarios where using `children!` may not be appropriate, as the longer `Children::spawn()` syntax gives you greater flexibility.
-{% end %}
+{% </callout> %}
 
 [`children!`]: https://docs.rs/bevy/latest/bevy/ecs/macro.children.html
 
@@ -202,7 +202,7 @@ impl Default for ContainedBy {
 pub struct Contents(Vec<Entity>);
 ```
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 **Note on naming**:
 When speaking of relationships, names are important because otherwise it's easy for language to get confused.
 For example, if a component is named `Parent`, does that mean that the entity _is_ a parent, or that it _has_ a parent?
@@ -210,7 +210,7 @@ For example, if a component is named `Parent`, does that mean that the entity _i
 The convention in Bevy is to try and pick names that are unambiguous.
 For example, `ChildOf` means that this entity _is_ a child, not that it _has_ a child.
 Similarly, `ContainedBy` makes it clear that this is an item in a container, not a container itself.
-{% end %}
+{% </callout> %}
 
 Now that we've defined our new relation, we can start using it!
 Remember the various methods for adding children in the previous sections?

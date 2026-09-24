@@ -55,9 +55,9 @@ If you're new to Bevy, here's the workflow we use:
 
    Try to split your work into separate commits, each with a distinct purpose. Be particularly mindful of this when responding to reviews so that it's easy to see what's changed.
 
-   {% callout() %}
+   {% <callout> %}
    Tip: [You can set up a global `.gitignore` file](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files#configuring-ignored-files-for-all-repositories-on-your-computer) to exclude your operating system/text editor's special/temporary files. (e.g. `.DS_Store`, `thumbs.db`, `*~`, `*.swp` or `*.swo`) This allows us to keep the `.gitignore` file in the repository uncluttered.
-    {% end %}
+    {% </callout> %}
 
 4. To test CI validations locally, run the `cargo run -p ci` command.
 

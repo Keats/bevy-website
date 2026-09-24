@@ -38,7 +38,7 @@ Thank you so much to [everyone who helped out](https://discord.com/channels/6910
 
 <!-- more -->
 
-{{ release_notes(version="0.14") }}
+{{ <release_notes version="0.14" /> }}
 
 ## What's Next?
 
@@ -55,6 +55,6 @@ Peering deep into the mists of time (predictions are _extra_ hard when your team
 - **Bevy Remote Protocol:** Communicating with actively running Bevy games is an incredibly powerful tool for building editors, debuggers and other tools. [We're developing](https://github.com/bevyengine/bevy/pull/13563) a reflection-powered protocol to create a solution that's ready to power a whole ecosystem.
 - **A Modular, Maintainable Render Graph:** Bevy's existing rendering architecture is already quite good at providing reusable renderer features like `RenderPhases`, batching, and draw commands. However, the render graph interface itself is one remaining pain points. Since it's distributed across many files the control flow is hard to understand, and its heavy use of ECS resources for passing around rendering data actively works against modularity. While the exact design hasn't been finalized (and feedback is very welcome!), we've been actively working to [redesign the render graph](https://github.com/bevyengine/bevy/pull/13397) in order to build up to a larger refactor of the renderer towards modularity and ease of use.
 
-{{ support_bevy() }}
-{{ contributors(version="0.14") }}
-{{ changelog(version="0.14")}}
+{{ <support_bevy /> }}
+{{ <contributors version="0.14" /> }}
+{{ <changelog version="0.14" /> }}

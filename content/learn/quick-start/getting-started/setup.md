@@ -239,16 +239,16 @@ This section explains how to speed up iterative compiles: the amount of time it 
   cargo add bevy -F dynamic_linking
   ```
 
-  {% callout(type="warning") %}
+  {% <callout type="warning"> %}
   On Windows you must also enable the [performance optimizations](#compile-with-performance-optimizations) or you will get a ["too many exported symbols"](https://github.com/bevyengine/bevy/issues/1110#issuecomment-1312926923) error.
 
   In order to run `cargo test --doc`, you must also add the path returned by `rustc --print target-libdir` to your `PATH` environment variable.
-  {% end %}
+  {% </callout> %}
 
-  {% callout(type="note") %}
+  {% <callout type="note"> %}
   Shipping your game with dynamic linking enabled is not recommended because it requires you to include `libbevy_dylib` alongside your game, it prevents certain optimizations, and can increase the size of your game.
   If you remove the `dynamic_linking` feature, your game executable can run standalone.
-  {% end %}
+  {% </callout> %}
 </details>
 
 <details>
@@ -311,10 +311,10 @@ This section explains how to speed up iterative compiles: the amount of time it 
   rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
   ```
 
-  {% callout(type="note") %}
+  {% <callout type="note"> %}
   Disabling `bevy/dynamic_linking` may improve Mold's performance.
   <sup>[citation needed]</sup>
-  {% end %}
+  {% </callout> %}
 
   </details>
 </details>
@@ -427,6 +427,6 @@ Now run `cargo run` again. The Bevy dependencies should start building. This wil
 
 Now that we have our Bevy project set up, we're ready to start making our first Bevy app!
 
-{% callout(type="note") %}
+{% <callout type="note"> %}
 If something went wrong, check out our [troubleshooting section](/learn/quick-start/troubleshooting/) or [ask for help on our Discord](https://discord.gg/bevy).
-{% end %}
+{% </callout> %}

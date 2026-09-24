@@ -1,0 +1,39 @@
+{% component compare_slider(@page, left_title, left_image, right_title, right_image, start_slider_at="", left_alt="", right_alt="", path="", height="") %}
+{#
+Creates a slider to compare two different images.
+Usage:
+    {{ <compare_slider
+        left_title="Left Title"
+        left_image="left_image.png"
+        right_title="Right Title"
+        right_image="right_image.png"
+        start_slider_at="40%"
+        left_alt="alt text"
+        right_alt="alt text"
+    /> }}
+Mandatory arguments: left_title, left_image, right_title, right_image.
+Optional arguments:
+    start_slider_at: 0% is completely showing right_image; 100% is completely showing left_image
+    left_alt: left image `alt` attribute; defaults to left_title
+    right_alt: right image `alt` attribute; defaults to right_title
+Content is not autoescaped, hence the explicit escape_html on attribute values.
+#}
+{% if path %}
+    {% set img = get_image_metadata(path=path ~ left_image) %}
+{% else %}
+    {% set img = get_image_metadata(path=page.colocated_path ~ left_image) %}
+{% endif %}
+<p class="image-compare-instruction">Drag this image to compare</p>
+<div class="image-compare-container" style="aspect-ratio: {{ img.width }} / {{ img.height }}{% if height %};height:{{ height | escape_html }}{% endif %}">
+  <div
+    style="aspect-ratio: {{ img.width }} / {{ img.height }};
+        {%- if start_slider_at %}--slider-value: {{ start_slider_at | escape_html }};{% endif %}"
+    class="image-compare"
+    data-title-a="{{ left_title | escape_html }}"
+    data-title-b="{{ right_title | escape_html }}"
+  >
+    <img class="image-a" alt="{% if left_alt %}{{ left_alt | escape_html }}{% else %}{{ left_title | escape_html }}{% endif %}" src="{{ left_image | escape_html }}">
+    <img class="image-b" alt="{% if right_alt %}{{ right_alt | escape_html }}{% else %}{{ right_title | escape_html }}{% endif %}" src="{{ right_image | escape_html }}">
+  </div>
+</div>
+{% endcomponent %}

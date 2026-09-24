@@ -35,7 +35,7 @@ Since our last release a few months ago we've added a _ton_ of new features, bug
 
 ## Bevy Solari: Raytraced Lighting (Experimental)
 
-{{ heading_metadata(authors=["@JMS55", "@SparkyPotato"] prs=[19058, 19620, 19790, 20020, 20113, 20156, 20213, 20242, 20259, 20406, 20457, 20580, 20596, 20622, 20658, 20659, 20980]) }}
+{{ <heading_metadata authors={["@JMS55", "@SparkyPotato"]} prs={[19058, 19620, 19790, 20020, 20113, 20156, 20213, 20242, 20259, 20406, 20457, 20580, 20596, 20622, 20658, 20659, 20980]} /> }}
 
 <video controls loop><source  src="solari.mp4" type="video/mp4"/></video>
 
@@ -87,7 +87,7 @@ Special thanks to `@Vecvec` for adding raytracing support to wgpu.
 
 ## Event / Observer Overhaul
 
-{{ heading_metadata(authors=["@cart", "@Jondolf", "@alice-i-cecile", "@hukasu", "@oscar-benderstone", "@Zeophlite", "@gwafotapa"] prs=[20731, 19596, 19663, 19611, 19935, 20274]) }}
+{{ <heading_metadata authors={["@cart", "@Jondolf", "@alice-i-cecile", "@hukasu", "@oscar-benderstone", "@Zeophlite", "@gwafotapa"]} prs={[20731, 19596, 19663, 19611, 19935, 20274]} /> }}
 
 Bevy's Observer API landed a few releases ago, and it has quickly become one of our most popular features. In **Bevy 0.17** we rearchitected and refined the Event and Observer APIs to be clearer, easier to use, and more performant. We plan on rolling out Bevy's [next generation Scene / UI system](https://github.com/bevyengine/bevy/pull/20158/) in the near future, and observers are a key piece! We wanted to ensure they were in a better place for the next phase of Bevy development. The old API had some problems:
 
@@ -282,7 +282,7 @@ It is still possible to support both contexts by implementing _both traits_, but
 
 ## Bevy Feathers: Widgets for Tooling (Experimental)
 
-{{ heading_metadata(authors=["@viridia", "@Atlas16A", "@ickshonpe", "@amedoeyes"] prs=[19730, 19900, 19928, 20237, 20169, 20422, 20350, 20548, 20969, 21247]) }}
+{{ <heading_metadata authors={["@viridia", "@Atlas16A", "@ickshonpe", "@amedoeyes"]} prs={[19730, 19900, 19928, 20237, 20169, 20422, 20350, 20548, 20969, 21247]} /> }}
 
 ![feathers widgets](feathers.jpg)
 
@@ -318,7 +318,7 @@ Feathers can serve as a helpful base to understand how to build and theme widget
 
 ## Realtime-Filtered Environment Maps
 
-{{ heading_metadata(authors=["@mate-h"] prs=[19076, 20529]) }}
+{{ <heading_metadata authors={["@mate-h"]} prs={[19076, 20529]} /> }}
 
 ![atmosphere reflections](atmosphere_reflections.jpg)
 
@@ -344,7 +344,7 @@ However, please be aware that light probes are not yet supported.
 
 ## Headless Bevy UI Widgets (Experimental)
 
-{{ heading_metadata(authors=["@viridia", "@ickshonpe", "@alice-i-cecile"] prs=[19366, 19584, 19665, 19778, 19803, 20032, 20036, 20086, 20944]) }}
+{{ <heading_metadata authors={["@viridia", "@ickshonpe", "@alice-i-cecile"]} prs={[19366, 19584, 19665, 19778, 19803, 20032, 20036, 20086, 20944]} /> }}
 
 Bevy's `Button` and `Interaction` components have been around for a long time. Unfortunately these components have a number of shortcomings, such as the fact that they don't use the new `bevy_picking` framework, or the fact that they are really only useful for creating buttons and not other kinds of widgets like sliders.
 
@@ -404,7 +404,7 @@ commands.spawn((
 
 ## Light Textures
 
-{{ heading_metadata(authors=["@robtfm"] prs=[18031]) }}
+{{ <heading_metadata authors={["@robtfm"]} prs={[18031]} /> }}
 
 <video controls loop><source  src="light_textures.mp4" type="video/mp4"/></video>
 
@@ -413,7 +413,7 @@ These modulate the intensity of light cast upon surfaces for various artistic ef
 
 ## Hot Patching Systems in a Running App
 
-{{ heading_metadata(authors=["@mockersf", "@janhohenheim"] prs=[19309]) }}
+{{ <heading_metadata authors={["@mockersf", "@janhohenheim"]} prs={[19309]} /> }}
 
 Bevy now supports hot patching systems via [subsecond](https://crates.io/crates/subsecond) and the [`dx`](https://crates.io/crates/dioxus-cli) command line tool from the Dioxus project.
 
@@ -434,14 +434,12 @@ We have plans to further expand support, including making the upcoming [`bsn!` m
 
 ## Deep Learning Super Sampling (DLSS)
 
-{{ heading_metadata(authors=["@JMS55", "@cart"] prs=[19864, 19817, 20565]) }}
+{{ <heading_metadata authors={["@JMS55", "@cart"]} prs={[19864, 19817, 20565]} /> }}
 
-{{ compare_slider(
-    left_title="No AA",
-    left_image="no_aa.jpg",
-    right_title="DLSS",
-    right_image="dlss.jpg"
-) }}
+{{ <compare_slider left_title="No AA"
+    left_image="no_aa.jpg"
+    right_title="DLSS"
+    right_image="dlss.jpg" /> }}
 
 For users with NVIDIA RTX GPUs, Bevy now offers yet another form of anti-aliasing: DLSS.
 
@@ -466,11 +464,11 @@ Special thanks to @cwfitzgerald for helping with the [`wgpu`](https://github.com
 
 ## Tilemap Chunk Rendering
 
-{{ heading_metadata(authors=["@ConnerPetzold", "@grind086", "@IceSentry"] prs=[18866]) }}
+{{ <heading_metadata authors={["@ConnerPetzold", "@grind086", "@IceSentry"]} prs={[18866]} /> }}
 
 ![tilemap](tilemap.jpg)
 
-{{ media_caption(url="cupnooble.itch.io/sprout-lands-asset-pack" text="Tilemap Credit: Cup Nooble's Sprout Lands") }}
+{{ <media_caption url="cupnooble.itch.io/sprout-lands-asset-pack" text="Tilemap Credit: Cup Nooble's Sprout Lands" /> }}
 
 A performant way to render tilemap chunks has been added as the first building block for Bevy's tilemap support (more to come in future releases!). You can render a chunk by supplying a tileset texture to the `TilemapChunk` component and tile data to `TilemapChunkTileData`. For each tile, `TileData` allows you to specify the index into the tileset, the visibility, and the color tint.
 
@@ -494,7 +492,7 @@ commands.spawn((
 
 ## `ViewportNode`
 
-{{ heading_metadata(authors=["@chompaa", "@ickshonpe"] prs=[17253]) }}
+{{ <heading_metadata authors={["@chompaa", "@ickshonpe"]} prs={[17253]} /> }}
 
 <video controls loop><source  src="viewport_node.mp4" type="video/mp4"/></video>
 
@@ -510,7 +508,7 @@ Furthermore, if the `bevy_ui_picking_backend` feature is enabled, you can "pick"
 
 ## Raymarched Atmosphere / Space Views
 
-{{ heading_metadata(authors=["@mate-h"] prs=[20766]) }}
+{{ <heading_metadata authors={["@mate-h"]} prs={[20766]} /> }}
 
 <video controls loop><source  src="atmosphere_raymarched.mp4" type="video/mp4"/></video>
 
@@ -545,7 +543,7 @@ See the updated [`atmosphere` example](https://github.com/bevyengine/bevy/blob/r
 
 ## Procedural Sun Disk
 
-{{ heading_metadata(authors=["@defuz"] prs=[20434]) }}
+{{ <heading_metadata authors={["@defuz"]} prs={[20434]} /> }}
 
 Any good [procedural atmosphere] deserves a procedural sun to light it.
 To enable this, add the [`SunDisk`] component to your [`DirectionalLight`] entity.
@@ -570,7 +568,7 @@ This is an effect known as "bloom", which is enabled by adding the [`Bloom`] com
 
 ## Web Assets
 
-{{ heading_metadata(authors=["@johanhelsing", "@mrchantey", "@jf908", "@atlv24"] prs=[20628]) }}
+{{ <heading_metadata authors={["@johanhelsing", "@mrchantey", "@jf908", "@atlv24"]} prs={[20628]} /> }}
 
 Bevy now supports downloading assets from the web over http and https.
 Use the new `http` and `https` features to enable `http://` and `https://` URLs as asset paths.
@@ -590,7 +588,7 @@ Special thanks to @johanhelsing and bevy_web_asset's contributors!
 
 ## Reflect Auto Registration
 
-{{ heading_metadata(authors=["@eugineerd"] prs=[15030]) }}
+{{ <heading_metadata authors={["@eugineerd"]} prs={[15030]} /> }}
 
 Deriving [`Reflect`] on types opts into **Bevy's** runtime reflection infrastructure, which is used to power systems like runtime component inspection and serialization:
 
@@ -630,7 +628,7 @@ any unsupported platforms to be supported upstream, sometimes it might not be po
 
 ## Virtual Geometry BVH culling
 
-{{ heading_metadata(authors=["@SparkyPotato", "@atlv24"] prs=[19318]) }}
+{{ <heading_metadata authors={["@SparkyPotato", "@atlv24"]} prs={[19318]} /> }}
 
 ![lots of dragons being rendered](mesh_bvh.jpg)
 
@@ -650,7 +648,7 @@ Comparing GPU times to **Bevy 0.16** on a much smaller scene with 1,300 instance
 
 ## Frame Time Graph
 
-{{ heading_metadata(authors=["@IceSentry", "@Zeophlite"] prs=[12561, 19277]) }}
+{{ <heading_metadata authors={["@IceSentry", "@Zeophlite"]} prs={[12561, 19277]} /> }}
 
 <video controls loop><source  src="fps_overlay.mp4" type="video/mp4"/></video>
 
@@ -665,7 +663,7 @@ The algorithm is highly inspired by [Adam Sawicki's article on visualizing frame
 
 ## `Text2d` Drop Shadows
 
-{{ heading_metadata(authors=["@ickshonpe"] prs=[20463]) }}
+{{ <heading_metadata authors={["@ickshonpe"]} prs={[20463]} /> }}
 
 ![text2d shadow](text2d_shadow.jpg)
 
@@ -673,7 +671,7 @@ The algorithm is highly inspired by [Adam Sawicki's article on visualizing frame
 
 ## Text Background Colors
 
-{{ heading_metadata(authors=["@ickshonpe"] prs=[18892, 20464]) }}
+{{ <heading_metadata authors={["@ickshonpe"]} prs={[18892, 20464]} /> }}
 
 ![text2d background](text2d_background.jpg)
 
@@ -683,7 +681,7 @@ Text in Bevy now supports background colors. Insert the `TextBackgroundColor` co
 
 ## UI Gradients
 
-{{ heading_metadata(authors=["@Ickshonpe"] prs=[18139, 19330, 19992]) }}
+{{ <heading_metadata authors={["@Ickshonpe"]} prs={[18139, 19330, 19992]} /> }}
 
 ![ui gradients](ui_gradients.jpg)
 
@@ -711,7 +709,7 @@ commands.spawn((
 
 ## Per-side UI Border Colors
 
-{{ heading_metadata(authors=["@robtfm"] prs=[18682]) }}
+{{ <heading_metadata authors={["@robtfm"]} prs={[18682]} /> }}
 
 ![ui border colors](ui_border_colors.jpg)
 
@@ -724,7 +722,7 @@ but we're looking forward to seeing your creative designs.
 
 ## Specialized UI Transform
 
-{{ heading_metadata(authors=["@Ickshonpe"] prs=[16615]) }}
+{{ <heading_metadata authors={["@Ickshonpe"]} prs={[16615]} /> }}
 
 In Bevy UI, [`Transform`] and `GlobalTransform` have been replaced by [`UiTransform`] and `UiGlobalTransform`.  [`UiTransform`] is a specialized 2D UI transform, which more effectively maps to the UI space, improves our internals substantially, and cuts out redundant, unnecessary, often expensive work (such as doing full hierarchical [`Transform`] propagation _in addition_ to the Bevy UI layout algorithm).
 
@@ -733,7 +731,7 @@ In Bevy UI, [`Transform`] and `GlobalTransform` have been replaced by [`UiTransf
 
 ## Data-Driven Materials
 
-{{ heading_metadata(authors=["@tychedelia"] prs=[19667]) }}
+{{ <heading_metadata authors={["@tychedelia"]} prs={[19667]} /> }}
 
 Bevy's material system has historically relied on the `Material` and `AsBindGroup` traits in order to provide a
 type-safe way to define data that is passed to the shader that renders your material. While this approach has
@@ -772,7 +770,7 @@ that defines Bevy's ECS. If you'd like to help us explore the possibilities of E
 
 ## Entity Spawn Ticks
 
-{{ heading_metadata(authors=["@urben1680", "@specificprotagonist"] prs=[19047, 19350]) }}
+{{ <heading_metadata authors={["@urben1680", "@specificprotagonist"]} prs={[19047, 19350]} /> }}
 
 In previous versions of Bevy, keeping track of which entities have been spawned since the last time a system ran could only be done indirectly by writing your own logic.
 
@@ -833,7 +831,7 @@ world.entity(entity).spawn_tick()
 
 ## ButtonInput for Key
 
-{{ heading_metadata(authors=["@kristoff3r"] prs=[19684]) }}
+{{ <heading_metadata authors={["@kristoff3r"]} prs={[19684]} /> }}
 
 Bevy now has a `ButtonInput<Key>` resource, similarly to the existing `ButtonInput<KeyCode>` resource.
 
@@ -845,7 +843,7 @@ for example when using '+'/'-' to zoom.
 
 ## `Val` helper functions
 
-{{ heading_metadata(authors=["@Ickshonpe", "@TheBlckbird"] prs=[20518, 20551, 20937]) }}
+{{ <heading_metadata authors={["@Ickshonpe", "@TheBlckbird"]} prs={[20518, 20551, 20937]} /> }}
 
 To make `Val`s easier to construct the following helper functions have been added: `px`, `percent`, `vw`, `vh`, `vmin` and `vmax`:
 
@@ -880,7 +878,7 @@ Each function calls the corresponding `UiRect` constructor on `self`, i.e. `fn l
 
 ## glTF Forward Semantics Configuration
 
-{{ heading_metadata(authors=["@janhohenheim"] prs=[19633, 19685, 19816, 20131, 20122]) }}
+{{ <heading_metadata authors={["@janhohenheim"]} prs={[19633, 19685, 19816, 20131, 20122]} /> }}
 
 _CAUTION: This is an experimental feature with [known issues](https://github.com/bevyengine/bevy/issues/20621). Behavior may change in future versions._
 
@@ -939,7 +937,7 @@ Setting the above to `None` will fall back to the global setting taken from `Glt
 
 ## `RenderStartup` Schedule
 
-{{ heading_metadata(authors=["@IceSentry", "@andriyDev"] prs=[19841, 19885, 19886, 19897, 19898, 19901, 19912, 19926, 19999, 20002, 20024, 20124, 20147, 20184, 20194, 20195, 20208, 20209, 20210]) }}
+{{ <heading_metadata authors={["@IceSentry", "@andriyDev"]} prs={[19841, 19885, 19886, 19897, 19898, 19901, 19912, 19926, 19999, 20002, 20024, 20124, 20147, 20184, 20194, 20195, 20208, 20209, 20210]} /> }}
 
 In previous versions of Bevy, render `Plugin` code had to look different than other `Plugin` code, due to how the renderer was initialized. In general, renderer resources and systems had to be added in `Plugin::finish`, separate from the typical spot: `Plugin::build`. The fact that `Plugin::finish` resulted in the correct order was a bit arbitrary / incidental.
 
@@ -998,7 +996,7 @@ We highly encourage renderer developers to port their own rendering resources to
 
 ## Component Propagation
 
-{{ heading_metadata(authors=["@robtfm"] prs=[17575]) }}
+{{ <heading_metadata authors={["@robtfm"]} prs={[17575]} /> }}
 
 When working with large hierarchies of game objects, coordinating the state of the entire tree can be frustrating.
 Bevy uses this pattern when working with transforms and visibility internally,
@@ -1033,7 +1031,7 @@ This is a very general tool: please let us know what you're using it for and we 
 
 ## Infinite Children
 
-{{ heading_metadata(authors=["@CorvusPrudens"] prs=[18865]) }}
+{{ <heading_metadata authors={["@CorvusPrudens"]} prs={[18865]} /> }}
 
 The `children!` macro is a convenient way to spawn children alongside their parents in Bevy code.
 When it was introduced in **Bevy 0.16** this was limited to 12 children, due to arbitrary limitations (Rust: please [support variadic generics!](https://blog.rust-lang.org/inside-rust/2025/09/11/program-management-update-2025-08/#variadic-generics)), and not implementing the requisite workarounds.
@@ -1047,7 +1045,7 @@ We've made the same change to the `related!` macro, allowing you to spawn huge n
 
 ## Decoupling Bevy's Public API from Bevy Render
 
-{{ heading_metadata(authors=["@atlv24", "@Ickshonpe", "@zeophlite"] prs=[20485, 20330, 18703, 20587, 20502, 19997, 19991, 20000, 19949, 19943, 19953, 20498, 20496, 20493, 20492, 20491, 20488, 20487, 20486, 20483, 20480, 20479, 20478, 20477, 20473, 20472, 20471, 20470, 20392, 20390, 20388, 20345, 20344, 20051, 19985, 19973, 19965, 19963, 19962, 19960, 19959, 19958, 19957, 19956, 19955, 19954, 16620, 16619, 15700, 15666, 15650]) }}
+{{ <heading_metadata authors={["@atlv24", "@Ickshonpe", "@zeophlite"]} prs={[20485, 20330, 18703, 20587, 20502, 19997, 19991, 20000, 19949, 19943, 19953, 20498, 20496, 20493, 20492, 20491, 20488, 20487, 20486, 20483, 20480, 20479, 20478, 20477, 20473, 20472, 20471, 20470, 20392, 20390, 20388, 20345, 20344, 20051, 19985, 19973, 19965, 19963, 19962, 19960, 19959, 19958, 19957, 19956, 19955, 19954, 16620, 16619, 15700, 15666, 15650]} /> }}
 
 In **Bevy 0.17** we have decoupled most of the user-facing renderer API from `bevy_render` (Bevy's default built-in renderer, which uses [`wgpu`](https://github.com/gfx-rs/wgpu)). It is now possible to use cameras, lights, shaders, images, meshes, sprites, text, ui, picking, animation, and scenes without depending on `bevy_render`.
 
@@ -1059,7 +1057,7 @@ Additionally, "shader library only" crates with minimal dependencies are now pos
 
 ## Consistent Naming Conventions for System Sets
 
-{{ heading_metadata(authors=["@Jondolf"] prs=[18900]) }}
+{{ <heading_metadata authors={["@Jondolf"]} prs={[18900]} /> }}
 
 Names of `SystemSet` types within Bevy and its ecosystem have historically
 been very inconsistent. Examples of system set names include `AccessibilitySystem`,
@@ -1099,8 +1097,8 @@ Peering deep into the mists of time (predictions are _extra_ hard when your team
 
 [adding more widgets]: https://github.com/bevyengine/bevy/issues/19236
 
-{{ support_bevy() }}
+{{ <support_bevy /> }}
 
-{{ contributors(version="0.17") }}
+{{ <contributors version="0.17" /> }}
 
 For those interested in a complete changelog, you can see the entire log (and linked pull requests) via the [relevant commit history](https://github.com/bevyengine/bevy/compare/v0.16.0...v0.17.0).

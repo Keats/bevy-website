@@ -35,9 +35,9 @@ To check out any local changes you've made:
 
 Your web browser should open and you should be able to access a local version of the `docs.rs` page from there.
 
-{% callout(type="warning") %}
+{% <callout type="warning"> %}
 The code in doc comments is compiled and tested to ensure that the examples work for our readers.
-{% end %}
+{% </callout> %}
 
 Doc-tests are run as part of the normal `cargo test` suite. To only run doc-tests, you can use `cargo test --doc`.
 
@@ -55,16 +55,16 @@ To check out any local changes you've made:
 
 A local server should start and you should be able to access a local version of the website from there.
 
-{% callout(type="warning") %}
+{% <callout type="warning"> %}
 The code in the learning materials (e.g., The Bevy Book, The Quick Start Guide, Advanced Examples, etc.) is compiled, formatted, and tested to make sure that the examples work for readers.
 
 To validate your code snippets either run `validate_examples.sh` which resides in the `learning-code-examples` directory (and is the recommended way to use `learning-code-examples`), or from the root of the project run `cd learning-code-examples && cargo check --examples && cargo clippy --examples && cargo fmt --check`.
 The code in the book is compiled and tested to make sure that the examples work for readers.
-{% end %}
+{% </callout> %}
 
-{% callout() %}
+{% <callout> %}
 [See the `learning-code-examples` README.md for more info.](https://github.com/bevyengine/bevy-website/blob/main/learning-code-examples/README.md)
-{% end %}
+{% </callout> %}
 
 ## Learning material structure
 
@@ -303,6 +303,6 @@ The Quickstart Guide in particular should assume a lower level of expertise.
    
     This will format markdown files and tell you the issues in HTML files. In order to run the command you should install `markdownlint-cli`, `djlint`, and `typos-cli`. See for installation: <https://github.com/igorshubovych/markdownlint-cli>, <https://www.djlint.com/docs/getting-started/>, and <https://github.com/crate-ci/typos?tab=readme-ov-file#install>.
     
-    {% callout() %}
+    {% <callout> %}
     The CI also includes `editorconfigchecker`, but there isn't an easy way to run this manually, so you should instead rely on CI to validate files with this tool.
-    {% end %}
+    {% </callout> %}

@@ -49,11 +49,11 @@ pub enum GameState {
 Here we derive from the `States` trait to define an enum with three variants, representing our three states.
 The `Default` defines the starting state.
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 The `States` trait is used to define _global_ states: that is, states that have influence over the entire Bevy `World`.
 However, while `States` models a finite-state machine, it is not the only possible use for FSMs within games.
 Animation and character behavior are also frequently modeled as FSMs, but since these only control a single entity, they are outside of the scope of what the `States` trait is intended for.
-{% end %}
+{% </callout> %}
 
 To use `GameState` we'll first need to register it with the `App`:
 
@@ -204,11 +204,11 @@ app
 When state transitions occur, sub-states and computed states are recomputed accordingly, causing these transitions to cascade.
 If we change `GameState`, causing `ActionState` to be removed, the `OnExit` schedule for the old `ActionState` value will run as well.
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 It might be reasonable to ask why we chose to model these different modes as sub-states: why not just have a single flat list of all the states?
 One reason is that all of these action states have a lot in common: they all have a HUD, they all have enemies which need to be spawned, and so on.
 By making them sub-states, we can tie the existence of, say, the HUD to the top-level state, while using the sub-states to control things like enemy and player movement.
-{% end %}
+{% </callout> %}
 
 ## Computed States: Automatically-Derived States
 
@@ -270,13 +270,13 @@ app.add_systems(Update, (update_hud, update_score, spawn_enemies).run_if(in_stat
 
 If we later add new `GameState` variants like `Cutscene` or `Tutorial`, we only need to update the `compute` function in one place.
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 
 Unlike sub-states, computed states are **read-only**: you cannot set them via [`NextState<T>`].
 Their value is entirely determined by their `compute` function.
 If you need a derived state that you can also manually override, use a sub-state instead.
 
-{% end %}
+{% </callout> %}
 
 [`add_computed_state`]: https://docs.rs/bevy/latest/bevy/app/struct.SubApp.html#method.add_computed_state
 [`ComputedStates`]: https://docs.rs/bevy/latest/bevy/state/state/trait.ComputedStates.html

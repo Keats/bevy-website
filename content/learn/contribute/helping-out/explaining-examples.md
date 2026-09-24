@@ -15,9 +15,9 @@ Example explanations should be **in the .rs file of the example**. This keeps th
 
 Everything in [Writing Documentation](../writing-docs) also applies here, with some context-specific tweaks as the context for examples is different.
 
-{% callout(type="warning") %}
+{% <callout type="warning"> %}
 There is no predictable order to how people visit the examples pages, people will look for what they need in the moment and then go to it. No page can assume that another page has been read first, or at least if it does it may need to link directly to that other page.
-{% end %}
+{% </callout> %}
 
 ### Building a narrative and avoiding rote repetition
 

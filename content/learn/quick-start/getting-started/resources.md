@@ -26,21 +26,21 @@ For simplicity, remove the `hello_world` system from your App. This way we only 
 
 Resources are accessed in much the same way that we access components. You can access the [`Time`] resource in your system like this:
 
-{{file_code_block(file="quick-start/getting_started_v9.rs", anchor="greet_people_system")}}
+{{ <file_code_block file="quick-start/getting_started_v9.rs" anchor="greet_people_system" /> }}
 
 [`Res`] and [`ResMut`] pointers provide read and write access (respectively) to resources.
 
 The `delta` field on [`Time`] gives us the time that has passed since the last update. But in order to run our system once every two seconds, we must track the amount of time that has passed over a series of updates. To make this easier, Bevy provides the [`Timer`] type. Let's create a new Resource to track elapsed time with a [`Timer`]:
 
-{{file_code_block(file="quick-start/getting_started_v10.rs", anchor="greet_timer_resource")}}
+{{ <file_code_block file="quick-start/getting_started_v10.rs" anchor="greet_timer_resource" /> }}
 
 And use it in our system:
 
-{{file_code_block(file="quick-start/getting_started_v10.rs", anchor="greet_people_system")}}
+{{ <file_code_block file="quick-start/getting_started_v10.rs" anchor="greet_people_system" /> }}
 
 Now all that's left is adding a `GreetTimer` Resource to our `HelloPlugin`. Use [`TimerMode::Repeating`] to make the timer repeat.
 
-{{file_code_block(file="quick-start/getting_started_v10.rs", anchor="hello_plugin_implementation")}}
+{{ <file_code_block file="quick-start/getting_started_v10.rs" anchor="hello_plugin_implementation" /> }}
 
 Now `cargo run` the App. It should now greet people at a reasonable rate.
 

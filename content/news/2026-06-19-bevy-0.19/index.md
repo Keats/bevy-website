@@ -30,7 +30,7 @@ Since our last release a few months ago we've added a _ton_ of new features, bug
 
 ## Next Generation Scenes
 
-{{ heading_metadata(authors=["@cart"] prs=[23413, 23880, 23808, 23905, 24008]) }}
+{{ <heading_metadata authors={["@cart"]} prs={[23413, 23880, 23808, 23905, 24008]} /> }}
 
 ![bsn](bsn.png)
 
@@ -520,7 +520,7 @@ fn level() -> impl SceneList {
 
 ## Render Big Scenes Faster! 
 
-{{ heading_metadata(authors=["@pcwalton", "@aevyrie", "@tychedelia"] prs=[23242, 23481, 23711, 23036, 23211, 23023, 22966, 22874, 22988, 23106, 23115, 23530, 22813, 22297, 23185, 23297, 23103, 22846]) }}
+{{ <heading_metadata authors={["@pcwalton", "@aevyrie", "@tychedelia"]} prs={[23242, 23481, 23711, 23036, 23211, 23023, 22966, 22874, 22988, 23106, 23115, 23530, 22813, 22297, 23185, 23297, 23103, 22846]} /> }}
 
 In **Bevy 0.19** we continued our focus on making large scale scenes render quickly. Lets first look at some benchmarks!
 
@@ -561,7 +561,7 @@ We accomplished these wins across _many_ changes. They can be summarized as "we 
 
 ## Solari Improvements
 
-{{ heading_metadata(authors=["@JMS55", "@dylansechet"] prs=[22348, 22459, 22468, 22618, 22671, 23442, 23809, 23813, 23898, 23948, 23968]) }}
+{{ <heading_metadata authors={["@JMS55", "@dylansechet"]} prs={[22348, 22459, 22468, 22618, 22671, 23442, 23809, 23813, 23898, 23948, 23968]} /> }}
 
 ![solari](solari.jpg)
 
@@ -571,7 +571,7 @@ For more details, read [JMS55's blog post](https://jms55.github.io/posts/2026-04
 
 ## More Feathers Widgets
 
-{{ heading_metadata(authors=["@viridia", "@jordanhalase"] prs=[23645, 23707, 23788, 23787, 23804, 23817, 23842, 23744, 23820, 23830, 23869, 23883, 23890, 23993, 24092]) }}
+{{ <heading_metadata authors={["@viridia", "@jordanhalase"]} prs={[23645, 23707, 23788, 23787, 23804, 23817, 23842, 23744, 23820, 23830, 23869, 23883, 23890, 23993, 24092]} /> }}
 
 ![feathers widgets](feathers.jpg)
 
@@ -619,7 +619,7 @@ In the future, the same BSN syntax used in the `bsn!` macro will be portable to 
 
 ## Text Input
 
-{{ heading_metadata(authors=["@ickshonpe", "@Zeophlite", "@alice-i-cecile", "@chronicl"] prs=[19106, 23282, 23455, 23475, 23479, 23496, 23679, 23704, 23841, 23947, 23960, 23969, 24023, 24028, 24032]) }}
+{{ <heading_metadata authors={["@ickshonpe", "@Zeophlite", "@alice-i-cecile", "@chronicl"]} prs={[19106, 23282, 23455, 23475, 23479, 23496, 23679, 23704, 23841, 23947, 23960, 23969, 24023, 24028, 24032]} /> }}
 
 <video controls loop><source  src="editable_text.mp4" type="video/mp4"/></video>
 
@@ -651,14 +651,12 @@ To see how to use it in practice, check out our new [`text_input.rs`](https://gi
 
 ## Contact Shadows
 
-{{ heading_metadata(authors=["@aevyrie"] prs=[22382]) }}
+{{ <heading_metadata authors={["@aevyrie"]} prs={[22382]} /> }}
 
-{{ compare_slider(
-    left_title="Contact Shadows Off",
-    left_image="no_contact_shadows.jpg",
-    right_title="Contact Shadows On",
-    right_image="contact_shadows.jpg"
-) }}
+{{ <compare_slider left_title="Contact Shadows Off"
+    left_image="no_contact_shadows.jpg"
+    right_title="Contact Shadows On"
+    right_image="contact_shadows.jpg" /> }}
 
 Bevy 0.19 introduces **contact shadows**, which help shadows capture the details of objects and attach properly to nearby surfaces.
 
@@ -694,7 +692,7 @@ Tuning values on that component controls how contact shadows are computed across
 
 ## Physically Based Screen Space Reflections
 
-{{ heading_metadata(authors=["@aevyrie"] prs=[22379]) }}
+{{ <heading_metadata authors={["@aevyrie"]} prs={[22379]} /> }}
 
 <video controls loop><source src="physical_reflections.mp4" type="video/mp4"/></video>
 
@@ -704,7 +702,7 @@ Bevy's screen space reflections now use a "physically based" algorithm, which im
 
 ## Rectangular Area Lights
 
-{{ heading_metadata(authors=["@dylansechet"] prs=[23288]) }}
+{{ <heading_metadata authors={["@dylansechet"]} prs={[23288]} /> }}
 
 ![rectangular area lights](rect_area_lights.png)
 
@@ -720,7 +718,7 @@ Check out [the new example](https://github.com/bevyengine/bevy/blob/v0.19.0/exam
 
 ## Richer text
 
-{{ heading_metadata(authors=["@ickshonpe", "@alice-i-cecile", "@gregcsokas"] prs=[22156, 22396, 22614, 22879, 23380]) }}
+{{ <heading_metadata authors={["@ickshonpe", "@alice-i-cecile", "@gregcsokas"]} prs={[22156, 22396, 22614, 22879, 23380]} /> }}
 
 Bevy's text system has historically been sparse: pick a font by asset handle, set a size in pixels, done.
 Want bold? Load a separate bold font asset.
@@ -811,7 +809,7 @@ Both are solid, modern choices, but we found `parley` had meaningfully better do
 
 ## App Settings
 
-{{ heading_metadata(authors=["@viridia", "@mpowell90"] prs=[22891, 23034, 23719, 23812]) }}
+{{ <heading_metadata authors={["@viridia", "@mpowell90"]} prs={[22891, 23034, 23719, 23812]} /> }}
 
 Bevy now has a built in general-purpose "app settings" system, which Bevy apps can use to load and save arbitrary settings such as:
 
@@ -861,18 +859,16 @@ A special thanks to Andhrimnir (@tecbeast42) for giving Bevy ownership of the `b
 
 ## More Post-Processing Effects
 
-{{ heading_metadata(authors=["@Breakdown-Dog"] prs=[22564, 23110]) }}
+{{ <heading_metadata authors={["@Breakdown-Dog"]} prs={[22564, 23110]} /> }}
 
 Two new post-processing effects were added in this cycle, both classic tools for giving your camera a more cinematic or stylized look.
 
 ### Vignette
 
-{{ compare_slider(
-    left_title="Without Vignette",
-    left_image="post_processing_base.jpg",
-    right_title="With Vignette",
-    right_image="post_processing_vignette.jpg"
-) }}
+{{ <compare_slider left_title="Without Vignette"
+    left_image="post_processing_base.jpg"
+    right_title="With Vignette"
+    right_image="post_processing_vignette.jpg" /> }}
 
 
 Vignette reduces image brightness towards the periphery of the frame, drawing the viewer's eye to the center.
@@ -894,19 +890,15 @@ commands.spawn((
 
 ### Lens Distortion
 
-{{ compare_slider(
-    left_title="No Distortion",
-    left_image="post_processing_base.jpg",
-    right_title="Barrel Distortion",
-    right_image="post_processing_barrel_distortion.jpg"
-) }}
+{{ <compare_slider left_title="No Distortion"
+    left_image="post_processing_base.jpg"
+    right_title="Barrel Distortion"
+    right_image="post_processing_barrel_distortion.jpg" /> }}
 
-{{ compare_slider(
-    left_title="No Distortion",
-    left_image="post_processing_base.jpg",
-    right_title="Pincushion Distortion",
-    right_image="post_processing_pincushion_distortion.jpg"
-) }}
+{{ <compare_slider left_title="No Distortion"
+    left_image="post_processing_base.jpg"
+    right_title="Pincushion Distortion"
+    right_image="post_processing_pincushion_distortion.jpg" /> }}
 
 Lens distortion warps the image spatially. Positive `intensity` pushes the edges outward (barrel distortion), negative pulls them inward (pincushion distortion).
 
@@ -925,7 +917,7 @@ commands.spawn((
 
 ## Render Recovery
 
-{{ heading_metadata(authors=["@atlv24", "@kfc35"] prs=[22761, 23350, 23349, 23433, 23458, 23444, 23459, 23461, 23463, 22714, 22759, 16481, 24131]) }}
+{{ <heading_metadata authors={["@atlv24", "@kfc35"]} prs={[22761, 23350, 23349, 23433, 23458, 23444, 23459, 23461, 23463, 22714, 22759, 16481, 24131]} /> }}
 
 GPU errors previously had no recovery path — a driver crash, an out-of-memory condition, or a device loss would silently hang or crash the app.
 This was particularly frustrating in long-lived applications (like art installations)
@@ -956,7 +948,7 @@ If you don't configure a [`RenderErrorHandler`], behavior is similar to but not 
 
 ## Render Graph as Systems
 
-{{ heading_metadata(authors=["@tychedelia"] prs=[22144]) }}
+{{ <heading_metadata authors={["@tychedelia"]} prs={[22144]} /> }}
 
 Bevy's `RenderGraph` architecture has been replaced with ECS schedules. Render passes are now regular systems that run in schedules such as [`Core3d`], [`Core2d`], which are executed on the render world.
 
@@ -1043,7 +1035,7 @@ rendering inside Bevy!
 
 ## Improved Skinned Mesh Culling
 
-{{ heading_metadata(authors=["@greeble-dev"] prs=[21837]) }}
+{{ <heading_metadata authors={["@greeble-dev"]} prs={[21837]} /> }}
 
 <video controls loop><source src="animated_bounds.mp4" type="video/mp4"/></video>
 
@@ -1067,14 +1059,12 @@ entity.insert((
 
 ## Parallax Corrected Cubemaps
 
-{{ heading_metadata(authors=["@pcwalton"] prs=[22582]) }}
+{{ <heading_metadata authors={["@pcwalton"]} prs={[22582]} /> }}
 
-{{ compare_slider(
-    left_title="Correction Off",
-    left_image="parallax_correction_off.jpg",
-    right_title="Correction On",
-    right_image="parallax_correction_on.jpg"
-) }}
+{{ <compare_slider left_title="Correction Off"
+    left_image="parallax_correction_off.jpg"
+    right_title="Correction On"
+    right_image="parallax_correction_on.jpg" /> }}
 
 Bevy previously rendered cubemap reflections as though the environment were infinitely far away.
 For outdoor scenes this was often fine, but for indoor scenes and dense environments the result looked wrong —
@@ -1098,7 +1088,7 @@ A new `pccm` example demonstrates the effect, with parallax correction toggleabl
 
 ## Partial Bindless / Reduced Bind Group Overhead
 
-{{ heading_metadata(authors=["@holg"] prs=[23436]) }}
+{{ <heading_metadata authors={["@holg"]} prs={[23436]} /> }}
 
 Bindless rendering is how modern engines handle scenes with many different materials efficiently: shaders index into shared pools of textures and buffers rather than rebinding them each draw call.
 
@@ -1133,7 +1123,7 @@ it's lovely to see those performance gains, and to know that Bevy itself is no l
 
 ## Diagnostics Overlay
 
-{{ heading_metadata(authors=["@hukasu", "@cart"] prs=[22486]) }}
+{{ <heading_metadata authors={["@hukasu", "@cart"]} prs={[22486]} /> }}
 
 ![overlay](overlay.jpg)
 
@@ -1165,7 +1155,7 @@ commands.spawn(DiagnosticsOverlay::new("Diagnostics", vec![DiagnosticsOverlayIte
 
 ## Contiguous Query Access
 
-{{ heading_metadata(authors=["@Jenya705"] prs=[21984, 24181]) }}
+{{ <heading_metadata authors={["@Jenya705"]} prs={[21984, 24181]} /> }}
 
 [SIMD] is a critical tool for performance optimization, but using it in Bevy has always been harder than it needed to be.
 Table components in Bevy are already laid out flat in memory — all [`Transform`] components are stored as values in a contiguous table, exactly what SIMD wants.
@@ -1212,7 +1202,7 @@ Vroom!
 
 ## Delayed Commands
 
-{{ heading_metadata(authors=["@Runi-c"] prs=[23090]) }}
+{{ <heading_metadata authors={["@Runi-c"]} prs={[23090]} /> }}
 
 Scheduling things to happen some time in the future is a common and useful tool in game development
 for everything from gameplay logic to audio cues to VFX.
@@ -1239,7 +1229,7 @@ We recommend embedding the originating [`Entity`] into the command if you want t
 
 ## Text Gizmos
 
-{{ heading_metadata(authors=["@ickshonpe", "@nuts-rice"] prs=[22732, 23120]) }}
+{{ <heading_metadata authors={["@ickshonpe", "@nuts-rice"]} prs={[22732, 23120]} /> }}
 
 ![text gizmos](text_gizmos.jpg)
 
@@ -1267,7 +1257,7 @@ If you want to color each section of characters separately, reach for `text_sect
 
 ## Cancellable Web Tasks
 
-{{ heading_metadata(authors=["@NthTensor", "@Gingeh"] prs=[21795]) }}
+{{ <heading_metadata authors={["@NthTensor", "@Gingeh"]} prs={[21795]} /> }}
 
 When a [`Task`] in Bevy is dropped, it's supposed to be cancelled, stopping the underlying work at the next yield point.
 On web, this never worked. `wasm_bindgen_futures::spawn_local` hands your future directly to the JS event loop with no handle to take it back, so Bevy's task wrapper was just a receipt with no power to cancel.
@@ -1287,7 +1277,7 @@ Bevy now uses it on WASM, so [`Task`] drop semantics are finally identical on al
 
 ## Asset Saving
 
-{{ heading_metadata(authors=["@andriyDev"] prs=[22622]) }}
+{{ <heading_metadata authors={["@andriyDev"]} prs={[22622]} /> }}
 
 Bevy has had an [`AssetSaver`] trait since 0.12.
 However, it was only ever intended for use inside asset processing pipelines, not for saving assets at runtime.
@@ -1346,7 +1336,7 @@ You'll also need to implement `AssetSaver` for `MyAssetSaver` to define the seri
 
 ## Resources as Components
 
-{{ heading_metadata(authors=["@Trashtalk217", "@cart", "@SpecificProtagonist"] prs=[20934, 22910, 22911, 22919, 22930, 23616, 23716, 24077, 24164]) }}
+{{ <heading_metadata authors={["@Trashtalk217", "@cart", "@SpecificProtagonist"]} prs={[20934, 22910, 22911, 22919, 22930, 23616, 23716, 24077, 24164]} /> }}
 
 Resources and components have always been separate concepts in Bevy's ECS. While the simple `Res<Time>` sugar is nice, the only real distinction is cardinality — a resource is a component of which at most one exists at any time.
 
@@ -1367,7 +1357,7 @@ unifying our internals and giving resources more capabilities. You can now:
 
 ## Remote Entity Reservation
 
-{{ heading_metadata(authors=["@ElliottjPierce", "@alice-i-cecile", "@cart"] prs=[18670, 22658]) }}
+{{ <heading_metadata authors={["@ElliottjPierce", "@alice-i-cecile", "@cart"]} prs={[18670, 22658]} /> }}
 
 Bevy has historically required a [`World`] reference to allocate entity IDs. This works in most scenarios, but it means that if you want to do work in parallel that initializes entities, you need to block your app's execution! This is problematic for things like our upcoming "assets as entities" work, which will involve preparing entity contents in the background while the app continues to run.
 
@@ -1377,7 +1367,7 @@ Bevy has historically required a [`World`] reference to allocate entity IDs. Thi
 
 ## Interactive Transform Gizmo
 
-{{ heading_metadata(authors=["@jbuehler23", "@aevyrie"] prs=[23435]) }}
+{{ <heading_metadata authors={["@jbuehler23", "@aevyrie"]} prs={[23435]} /> }}
 
 <video controls loop><source src="transform_gizmo.mp4" type="video/mp4"/></video>
 
@@ -1401,7 +1391,7 @@ Thanks again to Foresight Spatial Labs for their generous open source contributi
 
 ## Infinite Grid
 
-{{ heading_metadata(authors=["@IceSentry"] prs=[23482]) }}
+{{ <heading_metadata authors={["@IceSentry"]} prs={[23482]} /> }}
 
 ![infinite grid](infinite_grid.jpg)
 
@@ -1435,14 +1425,12 @@ This is an upstreamed version of the [`bevy_infinite_grid` crate], created and m
 
 ## White Furnace Test
 
-{{ heading_metadata(authors=["@dylansechet"] prs=[23194, 23203]) }}
+{{ <heading_metadata authors={["@dylansechet"]} prs={[23194, 23203]} /> }}
 
-{{ compare_slider(
-    left_title="Before",
-    left_image="white_furnace_before.jpg",
-    right_title="After",
-    right_image="white_furnace_after.jpg"
-) }}
+{{ <compare_slider left_title="Before"
+    left_image="white_furnace_before.jpg"
+    right_title="After"
+    right_image="white_furnace_after.jpg" /> }}
 
 The [white furnace test](https://lousodrome.net/blog/light/2023/10/21/the-white-furnace-test/) is a classic sanity check for physically-based renderers. Place a perfectly reflective object inside a uniform white environment, and it should be indistinguishable from the background, no matter how metallic and rough. Any object that remains visible is a sign that the shader is creating or absorbing energy it shouldn't.
 
@@ -1457,7 +1445,7 @@ A gray image has never been so exciting!
 
 ## Observer Run Conditions
 
-{{ heading_metadata(authors=["@jonas-meyer"] prs=[22602]) }}
+{{ <heading_metadata authors={["@jonas-meyer"]} prs={[22602]} /> }}
 
 Run conditions are a convenient, reusable pattern for skipping systems when certain conditions are met.
 Previously, run conditions only worked for ordinary systems.
@@ -1486,7 +1474,7 @@ This works with `add_observer`, entity `.observe()`, and the `Observer` builder 
 
 ## Serializing and Deserializing Asset Handles
 
-{{ heading_metadata(authors=["@andriyDev"] prs=[23329]) }}
+{{ <heading_metadata authors={["@andriyDev"]} prs={[23329]} /> }}
 
 Asset handles can now be round-tripped successfully during serialization and deserialization.
 This is particularly important for world assets — the serialization format written through [`DynamicWorld::serialize`], previously called scenes.
@@ -1518,7 +1506,7 @@ struct MyAsset {
 
 ## Self-Referential Relationships
 
-{{ heading_metadata(authors=["@mrchantey"] prs=[22269]) }}
+{{ <heading_metadata authors={["@mrchantey"]} prs={[22269]} /> }}
 
 By default, Bevy rejects relationship components that point to the entity they live on. If you insert one, Bevy will log a warning and remove it.
 This default exists for good reason: structural relationships like [`ChildOf`] form hierarchies that Bevy traverses recursively — a self-referential [`ChildOf`] would produce an infinite loop.
@@ -1539,7 +1527,7 @@ With the attribute set, inserting a self-referential relationship is accepted wi
 
 ## Accessible Label Component
 
-{{ heading_metadata(authors=["@viridia"] prs=[24308]) }}
+{{ <heading_metadata authors={["@viridia"]} prs={[24308]} /> }}
 
 The [`AccessibleLabel`] component allows the a11y `label` property to be specified separately from
 other a11y properties.
@@ -1574,9 +1562,9 @@ and polish them while we put it all together.
 - **WESL shader language:** WGSL is an adequate shader language, but it's missing some important niceties. Bevy has been working together with a cross-project group to extend it, in the form of [WESL]. We've [supported WESL for more than a year](https://github.com/bevyengine/bevy/pull/17953), but we're planning to port our existing internal shaders to use WESL, and endorse it as the shader language of choice for Bevy.
 - **A much more complete Bevy book:** Wish the Bevy Book was longer? We do too! We've substantially extended it, covering a much wider range of topics in more depth, and are hoping to release what we have soon, during the 0.20 development cycle. Expect a steady stream of new chapters as more of the engine reaches a "stable enough" status.
 
-{{ support_bevy() }}
+{{ <support_bevy /> }}
 
-{{ contributors(version="0.19") }}
+{{ <contributors version="0.19" /> }}
 
 For those interested in a complete changelog, you can see the entire log (and linked pull requests) via the [relevant commit history](https://github.com/bevyengine/bevy/compare/v0.18.0...v0.19.0).
 

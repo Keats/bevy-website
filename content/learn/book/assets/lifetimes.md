@@ -120,13 +120,13 @@ Even though we called [`AssetServer::load`] and stored the asset handle in a res
 To address this, we need to wait for our assets to load **before** starting our game.
 In essence, we need a loading screen - or at least a way to know when our assets are loaded.
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 
 There are all sorts of ways to implement a loading screen (even some that may be controversial to call loading screens, like the infamous "crawl through a narrow gap" animation).
 These are generally game specific, and it would be impossible to cover every possible situation.
 Instead, we'll focus on how to tell when the assets have been loaded instead.
 
-{% end %}
+{% </callout> %}
 
 The fundamental tools for this are [`AssetServer::is_loaded`], [`AssetServer::is_loaded_with_dependencies`], and [`AssetServer::is_loaded_with_direct_dependencies`].
 These allow you to query the current load state of a handle.
@@ -206,7 +206,7 @@ struct EnemyAssets {
 Now we can delete `EnemyAssets::is_loaded` and instead call `asset_server.are_dependencies_loaded(&enemy_assets)`.
 As long as we annotate all handles (and fields containing handles) with `#[dependency]`, this function will immediately tell us whether all our assets are loaded or not.
 
-{% callout(type="warning") %}
+{% <callout type="warning"> %}
 
 The `#[dependency]` attribute supports any type that implements [`VisitAssetDependencies`], whether it's a single handle, or a whole struct.
 This can be used to create complex structures.
@@ -231,7 +231,7 @@ struct CharacterSounds {
 ```
 
 [`VisitAssetDependencies`]: https://docs.rs/bevy/latest/bevy/asset/trait.VisitAssetDependencies.html
-{% end %}
+{% </callout> %}
 
 [`TimerMode::Repeating`]: https://docs.rs/bevy/latest/bevy/prelude/enum.TimerMode.html#variant.Repeating
 [`Sprite`]: https://docs.rs/bevy/latest/bevy/prelude/struct.Sprite.html

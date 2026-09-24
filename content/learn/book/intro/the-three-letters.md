@@ -25,9 +25,9 @@ let entity: Entity = commands.spawn_empty().id();
 
 While entities are conceptually similar to "objects" in object-oriented programming, they are distinctly different in that they are _composable_. You can add new data and behaviors to them using [components](#the-c-components) and [systems](#the-s-systems).
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 **Note on terminology**: Sometimes, using the word "entity" on its own can be ambiguous. It can mean the identifier (the `Entity` type) or it can mean the whole entity "object", with all of its stored components and behaviors. By convention, `Entity` typically refers to the id, and a lowercase "entity" typically refers to the "whole" game object.
-{% end %}
+{% </callout> %}
 
 ## The C: Components
 
@@ -86,9 +86,9 @@ fn my_system(mut entities: Query<&mut Location>) {
 }
 ```
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 Bevy systems use a technique called [dependency injection](https://en.wikipedia.org/wiki/Dependency_injection) to access ECS data. Function parameters like [Query](@/learn/book/intro/the-next-three-letters.md#queries) and [Res](@/learn/book/intro/the-next-three-letters.md#resources) will have their data filled in for you automatically!
-{% end %}
+{% </callout> %}
 
 Systems usually access entities and their components via [Queries](@/learn/book/intro/the-next-three-letters.md#queries), which will be covered in the next chapter.
 

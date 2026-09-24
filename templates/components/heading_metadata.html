@@ -1,8 +1,9 @@
+{% component heading_metadata(authors=[], prs=[]) %}
 <div class="heading-meta">
   {% if authors %}
   <div>
     <span class="heading-meta__title">Authors:</span>
-    {% for author in authors %}{% if author is starting_with("@") %}<a href="https://github.com/{{ author | trim_start_matches(pat="@") }}" class="heading-meta__item">{{ author }}</a>{% else %}<span class="heading-meta__item">{{ author }}</span>{% endif %}{% if not loop.last %},{% endif %}
+    {% for author in authors %}{% if author is starting_with(pat="@") %}<a href="https://github.com/{{ author | trim_start(pat="@") }}" class="heading-meta__item">{{ author }}</a>{% else %}<span class="heading-meta__item">{{ author }}</span>{% endif %}{% if not loop.last %},{% endif %}
     {% endfor %}
   </div>
   {% endif %}
@@ -14,3 +15,4 @@
   </div>
   {% endif %}
 </div>
+{% endcomponent heading_metadata %}

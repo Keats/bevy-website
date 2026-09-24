@@ -20,7 +20,7 @@ Specifically, the Main `SubApp` (where our Main `World` lives) calculates the si
 Then, the freshly computed info in the Main `SubApp` is extracted into the Render `SubApp`.
 This extraction happens once per frame, and can delay the game if either the game logic in the Main `SubApp` or the render process in the Render `SubApp` takes longer than the other.
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 
 #### GPU-Driven Vs CPU-Driven Rendering 
 
@@ -35,7 +35,7 @@ On the other hand, GPU-driven rendering sees the GPU perform those computations 
 
 By default, Bevy uses GPU driven rendering, however the CPU is still available to be used if desired.
 
-{% end %}
+{% </callout> %}
 
 ## The Rendering Process
 

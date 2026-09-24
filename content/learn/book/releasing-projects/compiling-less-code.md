@@ -64,7 +64,7 @@ The most important ones are:
 Disabling the default features and using these feature collections quickly removes large portions of the engine
 that your project will not need, all without spending a great deal of time digging into and updating more granular feature flags.
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 
 Bevy's ECS makes dead code analysis surprisingly challenging.
 Systems are registered regardless of whether or not any entities with those components ever exist.
@@ -73,7 +73,7 @@ and the compiler cannot strip them from the final binary.
 
 As a result, disabling plugins or removing systems from schedules will not result in a binary size reduction.
 
-{% end %}
+{% </callout> %}
 
 ## More Selective Feature Use
 
@@ -96,7 +96,7 @@ There are two viable approaches to constructing a minimal feature set:
 Both of these can work well; approach 1 prioritizes faster compilation times throughout development, while approach 2 will let you get off the ground more easily.
 Again, this process is _fully_ optional: you should not feel like you _have_ to do this unless you have real data that it's important for your particular project.
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 
 Features in Rust are _additive_.
 This means that if any crate in your tree enables a feature,
@@ -112,7 +112,7 @@ please open an issue or PR!
 In many cases, this is a simple mistake, and can be fixed by disabling `default-features`
 or by gating some of their functionality behind feature flags of their own.
 
-{% end %}
+{% </callout> %}
 
 ## Looking for Duplicate Crates
 

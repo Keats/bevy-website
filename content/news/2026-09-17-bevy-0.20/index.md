@@ -22,7 +22,7 @@ Since our last release a few months ago we've added a _ton_ of new features, bug
 
 ## BSN Syntax Improvements
 
-{{ heading_metadata(authors=[] prs=[25318, 25626]) }}
+{{ <heading_metadata authors={[]} prs={[25318, 25626]} /> }}
 
 BSN landed with a few idiosyncrasies that caused friction in practice. We made some changes to BSN's syntax this cycle in the interest of improving its ergonomics and clarity. After this, the syntax _should_ largely be nailed down.
 
@@ -221,7 +221,7 @@ bsn_list! {
 
 ## Ready Event
 
-{{ heading_metadata(authors=["@cart"] prs=[]) }}
+{{ <heading_metadata authors={["@cart"]} prs={[]} /> }}
 
 We landed BSN, Bevy's next generation scene system, [in our last release](/news/bevy-0-19). It was missing a key piece though: the ability to easily run logic when a scene is fully "ready" and spawned (ex: all dependencies have loaded, the full hierarchy is present, and all of the initial components are inserted in the scene). This is a critical piece for building cohesive, standalone, composable scenes. It is also necessary to properly layer Bevy logic on top of _other_ scene representations (like glTF).
 
@@ -255,7 +255,7 @@ world.spawn(bsn!{ @Widget })
 
 ## More Feathers Widgets
 
-{{ heading_metadata(authors=["@viridia", "@gagnus"] prs=[24092, 24847]) }}
+{{ <heading_metadata authors={["@viridia", "@gagnus"]} prs={[24092, 24847]} /> }}
 
 Feathers, Bevy's opinionated, editor-centric UI toolkit, now has more widgets for you to play with:
 
@@ -275,7 +275,7 @@ Spawns a menu popup when the menu is opened and _despawns_ it when it is closed.
 
 ## Number Input Widget Scrubbing / Dragging
 
-{{ heading_metadata(authors=["@viridia"] prs=[24636, 24701]) }}
+{{ <heading_metadata authors={["@viridia"]} prs={[24636, 24701]} /> }}
 
 The `FeathersNumberInput` widget has been substantially overhauled, with several new features.
 
@@ -315,7 +315,7 @@ example to see how to write such a handler trivially.
 
 ## Headless Tab Widgets
 
-{{ heading_metadata(authors=["@jbuehler23"] prs=[25515]) }}
+{{ <heading_metadata authors={["@jbuehler23"]} prs={[25515]} /> }}
 
 `bevy_ui_widgets` now has headless (bring-your-own-visuals) tab behavior: a `TabList` container and `Tab` headers.
 
@@ -340,7 +340,7 @@ See the `headless_tabs` example for controlled and self-updating tab lists in bo
 
 ## Solari on Metal
 
-{{ heading_metadata(authors=["@mate-h"] prs=[25123]) }}
+{{ <heading_metadata authors={["@mate-h"]} prs={[25123]} /> }}
 
 Ray tracing on Metal has been available since wgpu 29, and with bindless storage buffers landing in wgpu 30, Solari now runs on Apple Silicon Macs.
 
@@ -354,13 +354,13 @@ Denoising is not available on Metal yet, DLSS is NVIDIA-only. MetalFX Ray Recons
 
 ## Solari TODO
 
-{{ heading_metadata(authors=["@JMS55"] prs=[]) }}
+{{ <heading_metadata authors={["@JMS55"]} prs={[]} /> }}
 
 STUB TODO
 
 ## WESL Shaders
 
-{{ heading_metadata(authors=["@tychedelia"] prs=[25088]) }}
+{{ <heading_metadata authors={["@tychedelia"]} prs={[25088]} /> }}
 
 Bevy's shaders are now written in [WESL](https://wesl-lang.dev) and the old "Custom Bevy Extended WGSL" language support has been removed.
 
@@ -393,7 +393,7 @@ var<private> tint: vec4<f32>;
 
 ## Mesh Shaders
 
-{{ heading_metadata(authors=[] prs=[25627]) }}
+{{ <heading_metadata authors={[]} prs={[25627]} /> }}
 
 Mesh shaders are now integrated with Bevy's pipeline cache and are available for advanced users to take advantage of.
 Mesh shaders can be used to render:
@@ -441,7 +441,7 @@ Check out the new `mesh_shader_intro` example for more usage examples.
 
 ## Sprite Materials
 
-{{ heading_metadata(authors=["@cookie1170"] prs=[25415]) }}
+{{ <heading_metadata authors={["@cookie1170"]} prs={[25415]} /> }}
 
 **TODO: Add recording showcasing the `sprite_material` example**
 
@@ -466,7 +466,7 @@ Check out the `sprite_material` example to see it in action!
 
 ## 2D Extended Materials
 
-{{ heading_metadata(authors=["@cookie1170"] prs=[25183]) }}
+{{ <heading_metadata authors={["@cookie1170"]} prs={[25183]} /> }}
 
 Bevy now provides a 2D analog to 3D's [`ExtendedMaterial`], which can be used to extend an existing material by implementing the `MaterialExtension2d` trait:
 
@@ -536,14 +536,14 @@ fn spawn_extended_material_mesh(
 
 ## Sprite Render Backend Unification
 
-{{ heading_metadata(authors=["@IceSentry"] prs=[25432]) }}
+{{ <heading_metadata authors={["@IceSentry"]} prs={[25432]} /> }}
 
 The sprite render backend was replaced by a new backend that reuses a lot of the infrastructure made for 3d.
 This resulted in improved performance in many cases and also makes future maintenance and improvements easier.
 
 ## Pan Orbit Camera
 
-{{ heading_metadata(authors=["@aevyrie, @taishi-sama"] prs=[25434]) }}
+{{ <heading_metadata authors={["@aevyrie, @taishi-sama"]} prs={[25434]} /> }}
 
 Upstream of awesome crate [`bevy_editor_cam`](https://github.com/aevyrie/bevy_editor_cam) made by [@aevyrie](https://github.com/aevyrie) as part of `bevy_camera_controller` crate!
 
@@ -575,7 +575,7 @@ cargo run --example pan_orbit_camera_cad --features='pan_orbit_camera https 3d_a
 
 ## Weak System Ordering with `chain_weak`
 
-{{ heading_metadata(authors=["@JMS55"] prs=[25128]) }}
+{{ <heading_metadata authors={["@JMS55"]} prs={[25128]} /> }}
 
 Ordering large groups of systems with `.chain()` is convenient, but it can be
 overly strict. If system set `X` is chained before system set `Y`, every system
@@ -626,7 +626,7 @@ on such hidden ordering, otherwise stick with `chain`.
 
 ## Contextual Theming
 
-{{ heading_metadata(authors=["@viridia"] prs=[24969]) }}
+{{ <heading_metadata authors={["@viridia"]} prs={[24969]} /> }}
 
 Feathers now supports "contextual theming", meaning that the theme variables can change depending
 on the parent entity. So widgets that are inside of a dialog box or subpanel can have different
@@ -649,7 +649,7 @@ more intuitive.
 
 ## Val::Em and Val::Rem
 
-{{ heading_metadata(authors=["@gagnus"] prs=[25231]) }}
+{{ <heading_metadata authors={["@gagnus"]} prs={[25231]} /> }}
 
 Bevy UI now supports `em` and `rem` as sizing units. `em` is the current font size (represented by an `EmSize` component), `rem` is a
 global "root" font size (represented by the existing `RemSize` resource).
@@ -672,7 +672,7 @@ text will scale by default when you do.
 
 ## Per-column Change Ticks
 
-{{ heading_metadata(authors=["@pcwalton", "@SkiFire13"] prs=[25157, 25429]) }}
+{{ <heading_metadata authors={["@pcwalton", "@SkiFire13"]} prs={[25157, 25429]} /> }}
 
 Components can now opt-in to "column summary change ticks":
 
@@ -690,7 +690,7 @@ This makes mutations more expensive, as they need to write both the column chang
 
 ## FixedNode
 
-{{ heading_metadata(authors=["@Ickshonpe"] prs=[24323]) }}
+{{ <heading_metadata authors={["@Ickshonpe"]} prs={[24323]} /> }}
 
 `FixedNode` is a new marker component for Bevy UI.
 
@@ -698,7 +698,7 @@ A UI node entity with the `FixedNode` component is positioned relative to the ta
 
 ## Elliptical Border Radius
 
-{{ heading_metadata(authors=["@ickshonpe"] prs=[24779]) }}
+{{ <heading_metadata authors={["@ickshonpe"]} prs={[24779]} /> }}
 
 Bevy UI can now draw Nodes with elliptical border geometry.
 
@@ -712,7 +712,7 @@ let c = BorderRadius::top_right(CornerRadius::new(px(10.), px(20.)));
 
 ## Schedule Randomization
 
-{{ heading_metadata(authors=["@andriyDev"] prs=[25094]) }}
+{{ <heading_metadata authors={["@andriyDev"]} prs={[25094]} /> }}
 
 Before a schedule runs (and therefore, your systems), it first computes the system run order
 based on their ordering constraints (`.before()`, `.after()`, `.chain()`) and system
@@ -761,7 +761,7 @@ executor to avoid this case.
 
 ## Catching Panics
 
-{{ heading_metadata(authors=["@SpecificProtagonist"] prs=[24240]) }}
+{{ <heading_metadata authors={["@SpecificProtagonist"]} prs={[24240]} /> }}
 
 For long-running programs, crashing can be unacceptable. If, for example, there is a bug in one of your image editor's tools, it's better for that tool to fail or to produce wrong results than to lose all your unsaved work.
 
@@ -771,7 +771,7 @@ In Bevy 0.xx, these panics now get turned into errors and passed to the fallback
 
 ## CompressedImageSaver Improvements
 
-{{ heading_metadata(authors=["@JMS55", "@cwfitzgerald"] prs=[24223]) }}
+{{ <heading_metadata authors={["@JMS55", "@cwfitzgerald"]} prs={[24223]} /> }}
 
 Bevy's `CompressedImageSaver` asset processor has been significantly upgraded with a new compression backend powered by the [`ctt`](https://github.com/cwfitzgerald/ctt) library.
 
@@ -793,7 +793,7 @@ The previous Basis Universal compression behavior has been moved to the `compres
 
 ## Bevy Error Context Messages
 
-{{ heading_metadata(authors=["@cookie1170"] prs=[24528]) }}
+{{ <heading_metadata authors={["@cookie1170"]} prs={[24528]} /> }}
 
 Similar to the popular `anyhow` crate, `BevyError` now provides an ergonomic way to attach extra context to an error using the `context` method,
 which also allows creating a `Result<T, BevyError>` from an `Option<T>`.
@@ -842,7 +842,7 @@ Caused by:
 
 ## InlineBox and InlineImage
 
-{{ heading_metadata(authors=["@Ickshonpe"] prs=[25710]) }}
+{{ <heading_metadata authors={["@Ickshonpe"]} prs={[25710]} /> }}
 
 `InlineBox` is a new component added to `bevy_text` that allows space to be reserved within text layouts for custom content. Like `TextSpan`, an `InlineBox` entity is only valid when it's a descendant of a root `Text` or `Text2d` entity. `InlineBox` only reserves space, after layout `TextLayoutInfo::inline_boxes` contains the list of boxes and it's left to the user to draw its content. An inline box can be either `InFlow` or `OutOfFlow`. `InFlow` boxes takes up space and flows with the surrounding text. An `OutOfFlow` boxes is given a position as if it is zero-sized and it doesn't displace any text.
 
@@ -861,8 +861,8 @@ and polish them while we put it all together.
 
 - **X**: TODO
 
-{{ support_bevy() }}
+{{ <support_bevy /> }}
 
-{{ contributors(version="0.20") }}
+{{ <contributors version="0.20" /> }}
 
 For those interested in a complete changelog, you can see the entire log (and linked pull requests) via the [relevant commit history](https://github.com/bevyengine/bevy/compare/v0.19.0...v0.20.0).

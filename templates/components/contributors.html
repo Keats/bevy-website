@@ -1,5 +1,5 @@
-{% import "macros/path.html" as macros %}
-{% set data = load_data(path=macros::release_path(version=version, path="/contributors.toml")) %}
+{% component contributors(version) %}
+{% set data = load_data(path="./release-content/" ~ version ~ "/contributors.toml") %}
 
 ## Contributors
 
@@ -10,3 +10,4 @@ A huge thanks to the {{ data.contributors | length }} contributors that made thi
 <li>{{ contributor.name }}</li>
 {% endfor %}
 </ul>
+{% endcomponent %}

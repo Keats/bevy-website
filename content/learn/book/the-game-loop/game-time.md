@@ -19,7 +19,7 @@ during the [`TimeSystem`] system set in the [`First`] schedule.
 This is helpful for performance reasons, but more critically,
 it ensures consistency of behavior across all the various bits of game logic.
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 
 ## Time Versus Time Controls
 
@@ -31,7 +31,7 @@ If you'd like to read about these tools, please see the [Time Controls page] loc
 
 [Time Controls page]: @/learn/book/control-flow/time-controls.md
 
-{% end %}
+{% </callout> %}
 
 [`Time`]: https://docs.rs/bevy/latest/bevy/prelude/struct.Time.html
 [`Instant::now()`]: https://doc.rust-lang.org/std/time/struct.Instant.html#method.now
@@ -140,7 +140,7 @@ A "tick" is one pass of the [`FixedMain`] schedule, and corresponds to one itera
 The ratio between frames elapsed and ticks elapsed is not constant: they may be faster or slower, depending
 on the rendering performance and your game's simulation needs.
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 Simply requesting [`Time`] in your systems will get you the correct flavor 90% of the time: virtual time in the [`Main`] schedule,
 and fixed time in the [`FixedMain`] schedule.
 To request a specific variation, change the implicit generic in [`Time`] from `()`
@@ -153,7 +153,7 @@ to [`Real`], [`Virtual`] or [`Fixed`].
 [`Virtual`]: https://docs.rs/bevy/latest/bevy/prelude/struct.Virtual.html
 [`Fixed`]: https://docs.rs/bevy/latest/bevy/prelude/struct.Fixed.html
 
-{% end %}
+{% </callout> %}
 
 Now that we have the required vocabulary, let's go over exactly how the fixed timestep logic works in Bevy:
 

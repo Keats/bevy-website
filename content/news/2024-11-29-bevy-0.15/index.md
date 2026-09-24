@@ -34,7 +34,7 @@ Bevy 0.15 was prepared using our new **release candidate** process to help ensur
 
 <!-- more -->
 
-{{ release_notes(version="0.15") }}
+{{ <release_notes version="0.15" /> }}
 
 ## What's Next?
 
@@ -50,6 +50,6 @@ Peering deep into the mists of time (predictions are _extra_ hard when your team
 - **Actually Retained Rendering:** While the render world is _technically_ retained in Bevy 0.15, most of our existing code still spawns and despawns entities every frame to reduce the risk of introducing bugs during the migration. We're looking forward to gradually changing this and profiling the performance impact!
 - **`no_std` Bevy:** To better support weird platforms (like the [Playdate](https://play.date/)!) and make life easier for devs experimenting with Bevy on modern consoles, we've been [working towards](https://github.com/bevyengine/bevy/issues/15460) ensuring that (much of) Bevy can compile and run without Rust's standard library.
 
-{{ support_bevy() }}
-{{ contributors(version="0.15") }}
-{{ changelog(version="0.15")}}
+{{ <support_bevy /> }}
+{{ <contributors version="0.15" /> }}
+{{ <changelog version="0.15" /> }}

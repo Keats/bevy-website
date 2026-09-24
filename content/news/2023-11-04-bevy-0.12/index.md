@@ -104,23 +104,19 @@ Looking better! However this still isn't a perfect solution. Large shadowmaps ar
 
 **Bevy 0.12**'s default PCF approach is the [`ShadowMapFilter::Castano13`] method by Ignacio Castaño (used in The Witness). Here it is with a 512x512 shadow map:
 
-{{ compare_slider(
-    left_title="Castano 13 PCF",
-    left_image="pcf_castano.png",
-    right_title="PCF Off",
-    right_image="no_pcf.png"
-) }}
+{{ <compare_slider left_title="Castano 13 PCF"
+    left_image="pcf_castano.png"
+    right_title="PCF Off"
+    right_image="no_pcf.png" /> }}
 
 Much better!
 
 We also implemented the [`ShadowMapFilter::Jimenez14`] method by Jorge Jimenez (used in Call of Duty Advanced Warfare). This can be slightly cheaper than Castano, but it can flicker. It benefits from [Temporal Anti-Aliasing (TAA)](/news/bevy-0-11/#temporal-anti-aliasing) which can reduce the flickering. It can also blend shadow cascades a bit more smoothly than Castano.
 
-{{ compare_slider(
-    left_title="Jimenez 14 PCF",
-    left_image="pcf_jimenez.png",
-    right_title="PCF Off",
-    right_image="no_pcf.png"
-) }}
+{{ <compare_slider left_title="Jimenez 14 PCF"
+    left_image="pcf_jimenez.png"
+    right_title="PCF Off"
+    right_image="no_pcf.png" /> }}
 
 [`ShadowMapFilter::Castano13`]: https://docs.rs/bevy/0.12.0/bevy/pbr/enum.ShadowFilteringMethod.html#variant.Castano13
 [`ShadowMapFilter::Jimenez14`]: https://docs.rs/bevy/0.12.0/bevy/pbr/enum.ShadowFilteringMethod.html#variant.Jimenez14

@@ -115,12 +115,10 @@ expensive.
 
 **Bevy 0.13** adds support for **Approximate Indirect Specular Occlusion**, which uses our existing [Screen Space Ambient Occlusion](/news/bevy-0-11/#screen-space-ambient-occlusion) to _approximate_ specular occlusion, which can run efficiently in real time while still producing reasonably high quality results:
 
-{{ compare_slider(
-    left_title="Specular Occlusion On",
-    left_image="specular_occlusion_on.jpg",
-    right_title="Specular Occlusion Off",
-    right_image="specular_occlusion_off.jpg"
-) }}
+{{ <compare_slider left_title="Specular Occlusion On"
+    left_image="specular_occlusion_on.jpg"
+    right_title="Specular Occlusion Off"
+    right_image="specular_occlusion_off.jpg" /> }}
 
 <div style="font-size: 1.0rem" class="release-feature-authors">Model Credits: <a href="https://sketchfab.com/3d-models/bmw-r1200gs-motorcycle-6550451b0ae547039585a44286b2f530">BMW R1200GS Motorcycle</a> by Moto3D is licensed under <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>.
 </div>
@@ -492,12 +490,10 @@ In **Bevy 0.13**, you can now configure the EV100 on a per-camera basis using th
 
 This is important because Bevy's "physically based" renderer (PBR) is intentionally grounded in reality. Our goal is for people to be able to use real-world units in their lights and materials and have them behave as close to reality as possible.
 
-{{ compare_slider(
-    left_title="EV100 9.7",
-    left_image="exposure_97.jpg",
-    right_title="EV100 15",
-    right_image="exposure_15.jpg"
-) }}
+{{ <compare_slider left_title="EV100 9.7"
+    left_image="exposure_97.jpg"
+    right_title="EV100 15"
+    right_image="exposure_15.jpg" /> }}
 
 Note that prior versions of Bevy hard-coded a static EV100 for some of its light types. In **Bevy 0.13** it is configurable _and_ consistent across all light types. We have also bumped the default EV100 to 9.7, which is a [number we chose to best match Blender's default exposure](https://github.com/bevyengine/bevy/issues/11577#issuecomment-1942873507). It also happens to be a nice "middle ground" value that sits somewhere between indoor lighting and overcast outdoor lighting.
 

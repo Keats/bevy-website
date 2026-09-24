@@ -24,7 +24,7 @@ However, most developers don't need a custom experience and just want the "full 
 Let's make our app more interesting by adding Bevy's [`DefaultPlugins`] which are a [`PluginGroup`] containing core engine features. (For those needing minimal features, [`MinimalPlugins`] exists).
 `add_plugins(DefaultPlugins)` adds the features most people expect from an engine, such as a 2D / 3D renderer, asset loading, a UI system, windows, and input.
 
-{{file_code_block(file="quick-start/getting_started_v6.rs", anchor="app_main")}}
+{{ <file_code_block file="quick-start/getting_started_v6.rs" anchor="app_main" /> }}
 
 Once again run `cargo run`.
 
@@ -39,15 +39,15 @@ You should hopefully notice two things:
 
 For better organization, let's move all of our "hello" logic to a plugin. To create a plugin we just need to implement the [`Plugin`] interface. Add the following code to your `main.rs` file:
 
-{{file_code_block(file="quick-start/getting_started_v7.rs", anchor="hello_plugin")}}
+{{ <file_code_block file="quick-start/getting_started_v7.rs" anchor="hello_plugin" /> }}
 
 Then register the plugin in your App like this:
 
-{{file_code_block(file="quick-start/getting_started_v7.rs", anchor="app_main")}}
+{{ <file_code_block file="quick-start/getting_started_v7.rs" anchor="app_main" /> }}
 
 Note `add_plugins` can add any number of plugins (or plugin groups like `DefaultPlugins`) by passing in a tuple of them. Now all that's left is to move our systems into `HelloPlugin`, which is just a matter of cut and paste. The `app` variable in our plugin's `build()` function is the same builder type we use in our `main()` function:
 
-{{file_code_block(file="quick-start/getting_started_v8.rs", anchor="hello_plugin_implementation")}}
+{{ <file_code_block file="quick-start/getting_started_v8.rs" anchor="hello_plugin_implementation" /> }}
 
 Try running the app again. It should do exactly what it did before. In the next section, we'll fix the "hello" spam using Resources.
 

@@ -27,7 +27,7 @@ Since our last release a few months ago we've added a _ton_ of new features, bug
 - **Faster Transform Propagation:** We've dramatically improved the performance of transform propagation for more objects at once, especially if they are static.
 <!-- more -->
 
-{{ release_notes(version="0.16") }}
+{{ <release_notes version="0.16" /> }}
 
 ## What's Next?
 
@@ -43,8 +43,8 @@ Peering deep into the mists of time (predictions are _extra_ hard when your team
 - **Ray-tracing foundations:** Hardware-accelerated ray-tracing is all the rage, and with `wgpu`'s help we're ready to start making the first steps, walking towards a world of dynamic ray-traced global illumination.
 - **More game-focused examples:** New users continue to flock to Bevy, and need up-to-date learning materials. Our API-focused approach to examples isn't enough: we need to start demonstrating how to use Bevy to do common game dev tasks like making an inventory, saving user preferences or placing structures on a map.
 
-{{ support_bevy() }}
+{{ <support_bevy /> }}
 
-{{ contributors(version="0.16") }}
+{{ <contributors version="0.16" /> }}
 
 For those interested in a complete changelog, you can see the entire log (and linked pull requests) via the [relevant commit history](https://github.com/bevyengine/bevy/compare/v0.15.0...v0.16.0-rc.5).

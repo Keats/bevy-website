@@ -15,9 +15,9 @@ Working Groups are temporary community initiatives devoted to accomplishing a [*
 
 As you can see, these aren't purely for programming tasks!
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 You can read more about how to find, and join, active Working Groups in the [How You Can Help](@/learn/contribute/helping-out/how-you-can-help.md) section.
-{% end %}
+{% </callout> %}
 
 ## Ground Rules
 

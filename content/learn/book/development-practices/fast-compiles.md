@@ -28,18 +28,18 @@ If you don't want to add the `--features bevy/dynamic_linking` to each run, this
 cargo add bevy -F dynamic_linking
 ```
 
-{% callout(type="warning") %}
+{% <callout type="warning"> %}
 On Windows you must also enable the [performance optimizations] or you will get a ["too many exported symbols"](https://github.com/bevyengine/bevy/issues/1110#issuecomment-1312926923) error.
 
 [performance optimizations]: @/learn/book/releasing-projects/release-builds.md
 
 In order to run `cargo test --doc`, you must also add the path returned by `rustc --print target-libdir` to your `PATH` environment variable.
-{% end %}
+{% </callout> %}
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 Shipping your game with dynamic linking enabled is not recommended because it requires you to include `libbevy_dylib` alongside your game, it prevents certain optimizations, and can increase the size of your game.
 If you remove the `dynamic_linking` feature, your game executable can run standalone.
-{% end %}
+{% </callout> %}
 
 ### Alternative Linkers
 
@@ -65,10 +65,10 @@ rustflags = ["-C", "link-arg=-fuse-ld=/path/to/mold"]
 # Where "/path/to/mold" is the location of your mold installation.
 ```
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 Disabling `bevy/dynamic_linking` may improve Mold's performance.
 <sup>[citation needed]</sup>
-{% end %}
+{% </callout> %}
 
 </details>
 
@@ -118,12 +118,12 @@ Notably, WASM builds do not work yet.
 
 When shipping your game, you should still compile it with LLVM.
 
-{% callout(type="caution") %}
+{% <callout type="caution"> %}
 Enabling Cranelift is known to break local variable inspection while debugging.
 You can only inspect statics.
 This is caused by the fact that `rustc_codegen_cranelift` is missing DWARF support.
 See [`Cranelift #166`](https://github.com/rust-lang/rustc_codegen_cranelift/issues/166) for more information.
-{% end %}
+{% </callout> %}
 
 ## Generic Sharing
 

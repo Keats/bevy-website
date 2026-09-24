@@ -33,7 +33,7 @@ The user could also add events that your plugin should listen for, or add a reso
 
 You can define a generic plugin like so:
 
-{{file_code_block(file="quick-start/generic_plugin.rs", anchor="generic_plugin")}}
+{{ <file_code_block file="quick-start/generic_plugin.rs" anchor="generic_plugin" /> }}
 
 A prime example of generic plugins in use is the [Bevy Cellular Automaton Plugin](https://github.com/ManevilleF/bevy_life).
 

@@ -22,7 +22,7 @@ Meanwhile, a `Stopwatch` will simply track how much time has elapsed since it wa
 These are two simple tools that can be incredibly helpful, however Bevy provides many more features that can be used to structure your systems and even interact with `Commands`.
 We'll detail those further down this page, but for now let's get a little more familiar with `Timer`s and `Stopwatch`s.
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 
 ## Time Versus Time Controls
 
@@ -40,7 +40,7 @@ It might also be handy to read the [Systems] and [Skipping Systems] pages that a
 [Schedules page]: @/learn/book/the-game-loop/schedules.md
 [System Timer Conditions section]: #system-timer-conditions
 
-{% end %}
+{% </callout> %}
 
 [`Timer`]: https://docs.rs/bevy/latest/bevy/prelude/struct.Timer.html
 [`Stopwatch`]: https://docs.rs/bevy/latest/bevy/time/struct.Stopwatch.html
@@ -74,7 +74,7 @@ fn update_ability_timer(mut query: Query<&mut AbilityTimer>) {
 }
 ```
 
-{% callout(type="warning") %}
+{% <callout type="warning"> %}
 
 ### Consistent Ticking
 
@@ -96,7 +96,7 @@ To read more about "time-step" and how Bevy handles time, we recommend reading t
 [`Time`]: https://docs.rs/bevy/latest/bevy/time/struct.Time.html
 [`Time::delta`]: https://docs.rs/bevy/latest/bevy/time/struct.Time.html#method.delta
 
-{% end %}
+{% </callout> %}
 
 ### Creating Timers
 

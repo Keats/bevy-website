@@ -1,0 +1,5 @@
+{% component callout(type="info") %}
+<aside class="callout callout--{{ type }}">
+  {{ body | markdown | safe }}
+</aside>
+{% endcomponent callout %}

@@ -35,14 +35,12 @@ Since our last release a few months ago we've added a _ton_ of new features, bug
 
 <div class="release-feature-authors">authors: @JMS55, @danchia, @superdump </div>
 
-{{ compare_slider(
-    left_title="Without SSAO",
-    left_alt = "The Sponza scene without SSAO, it contains a lot of persian-style velvet curtains, they look awkward.",
-    left_image="no_ssao.png",
-    right_title="With SSAO",
-    right_alt = "The Sponza scene with SSAO, the curtains look much more realistic and sculptued. SSAO darkens the ridges between the folds, making the curtains much more interesting to look at",
-    right_image="with_ssao.png"
-) }}
+{{ <compare_slider left_title="Without SSAO"
+    left_alt="The Sponza scene without SSAO, it contains a lot of persian-style velvet curtains, they look awkward."
+    left_image="no_ssao.png"
+    right_title="With SSAO"
+    right_alt="The Sponza scene with SSAO, the curtains look much more realistic and sculptued. SSAO darkens the ridges between the folds, making the curtains much more interesting to look at"
+    right_image="with_ssao.png" /> }}
 
 **SSAO Only**
 ![ssao_only](ssao_only.png)
@@ -67,16 +65,14 @@ Special thanks to Intel for their open source [XeGTAO](https://github.com/GameTe
 
 <div class="release-feature-authors">authors: @JMS55, @DGriffin91</div>
 
-{{ compare_slider(
-    left_title="MSAA",
-    left_alt="The Helmet model with MSAA, anti-aliasing. The edge between meshes are well aliased, but crenellation is noticeable on sharp shadows and specular highlights",
-    left_image="msaa_helmet.png",
-    right_title="TAA",
-    right_alt="With TAA, little crenellation is visible, but it feels a bit 'smudgy'",
-    right_image="taa_helmet.png",
-    start_slider_at="39%",
-    height="619px"
-) }}
+{{ <compare_slider left_title="MSAA"
+    left_alt="The Helmet model with MSAA, anti-aliasing. The edge between meshes are well aliased, but crenellation is noticeable on sharp shadows and specular highlights"
+    left_image="msaa_helmet.png"
+    right_title="TAA"
+    right_alt="With TAA, little crenellation is visible, but it feels a bit 'smudgy'"
+    right_image="taa_helmet.png"
+    start_slider_at="39%"
+    height="619px" /> }}
 
 Alongside MSAA and FXAA, Bevy now supports Temporal Anti-aliasing (TAA) as an anti-aliasing option.
 
@@ -107,13 +103,11 @@ You can compare all of our anti-aliasing methods in Bevy's improved [anti-aliasi
 
 Effects like TAA and FXAA can cause the final render to become blurry. Sharpening post processing effects can help counteract that. In **Bevy 0.11** we've added a port of AMD's Robust Contrast Adaptive Sharpening (RCAS).
 
-{{ compare_slider(
-    left_title="TAA",
-    left_image="rcas_off.png",
-    right_title="TAA+RCAS",
-    right_image="rcas_on.png",
-    start_slider_at="55%"
-) }}
+{{ <compare_slider left_title="TAA"
+    left_image="rcas_off.png"
+    right_title="TAA+RCAS"
+    right_image="rcas_on.png"
+    start_slider_at="55%" /> }}
 
 Notice that the texture on the leather part of the helmet is much crisper!
 
@@ -304,13 +298,11 @@ Since normal maps do not "move" the shaded areas, merely shade them
 differently, we get those awkward specular highlights. With parallax mapping,
 they are gone.
 
-{{ compare_slider(
-    left_title="Normals Only",
-    left_image="parallax_mapping_normals.jpg",
-    right_title="Parallax & Normal Mapping",
-    right_image="parallax_mapping_depth.jpg",
-    start_slider_at="40%"
-) }}
+{{ <compare_slider left_title="Normals Only"
+    left_image="parallax_mapping_normals.jpg"
+    right_title="Parallax & Normal Mapping"
+    right_image="parallax_mapping_depth.jpg"
+    start_slider_at="40%" /> }}
 
 Parallax mapping in Bevy is still very limited. The most painful aspect is that
 it is not a standard glTF feature, meaning that the depth texture needs to be
@@ -832,12 +824,10 @@ and the vibration strength. `GamepadRumbleRequest::Stop` immediately stops all m
 
 In **Bevy 0.10** we [made tonemapping configurable with a ton of new tonemapping options](/news/bevy-0-10/#more-tonemapping-choices). In **Bevy 0.11** we've switched the default tonemapping method from "Reinhard luminance" tonemapping to "TonyMcMapface":
 
-{{ compare_slider(
-    left_title="Reinhard-luminance",
-    left_image="tm_reinhard_luminance.png",
-    right_title="TonyMcMapface",
-    right_image="tm_tonymcmapface.png"
-) }}
+{{ <compare_slider left_title="Reinhard-luminance"
+    left_image="tm_reinhard_luminance.png"
+    right_title="TonyMcMapface"
+    right_image="tm_tonymcmapface.png" /> }}
 
 TonyMcMapface ([created by Tomasz Stachowiak](https://github.com/h3r2tic/tony-mc-mapface)) is a much more neutral display transform that tries to stay as close to the input "light" as possible. This helps retain artistic choices in the scene. Notably, brights desaturate across the entire spectrum (unlike Reinhard luminance). It also works much better with bloom when compared to Reinhard luminance.
 

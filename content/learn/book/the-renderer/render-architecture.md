@@ -55,7 +55,7 @@ Bevy uses WGPU (via the [`wgpu`](https://crates.io/crates/wgpu) crate) to unify 
 Instead of having to individually support each graphics API, WGPU gives Bevy a unified interface for rendering.
 As long as you're targeting a supported platform (Windows, MacOS, Linux, Android, and iOS), WGPU can translate your requests into the appropriate graphics API calls.
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 ### Why WGPU?
 
 Now that we've gone over what Bevy uses for its rendering setup, you might be wondering why Bevy chooses to rely on a third-party tool instead of creating our own solution.
@@ -68,7 +68,7 @@ By choosing to rely on WGPU, we're removing several burdens: supporting multiple
 We also gain quite a lot by sharing knowledge and learning resources with WGPU rather than having to create our own bespoke material.
 Ultimately, it's about finding a solution that meets Bevy's needs while removing unnecessary burdens from our maintainers: WGPU is currently the best fit for those goals.
 
-{% end %}
+{% </callout> %}
 
 This chapter focuses on Bevy's own rendering features, but a broader base of knowledge is quite useful, and you may occasionally want to interact with WGPU directly for advanced features.
 If you are interested in learning more about WGPU, we can point you towards [Learn WGPU](https://sotrh.github.io/learn-wgpu/), a series of tutorials that can help you learn more about working with WGPU and graphics programming concepts in general.

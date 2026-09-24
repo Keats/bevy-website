@@ -1,7 +1,6 @@
-{% import "macros/path.html" as macros %}
-
-{% set base_path = macros::release_path(version=version, path="/migration-guides/") %}
-{% set guides_data = load_data(path=macros::path_join(path_a=base_path, path_b="/_guides.toml")) %}
+{% component migration_guides(version) %}
+{% set base_path = "./release-content/" ~ version ~ "/migration-guides/" %}
+{% set guides_data = load_data(path=base_path ~ "_guides.toml") %}
 {% set previous_area = "" %}
 
 <aside class="callout callout--warning">
@@ -10,7 +9,7 @@
 
 <div class="migration-guide">
 {% for guide in guides_data.guides %}
-{% set guide_body = load_data(path=macros::path_join(path_a=base_path, path_b=guide.file_name)) %}
+{% set guide_body = load_data(path=base_path ~ guide.file_name) %}
 {% if guide.areas[0] %}
 {% set area_name = guide.areas[0] %}
 {% else %}
@@ -44,3 +43,4 @@
 {% endfor %}
 
 </div>
+{% endcomponent %}

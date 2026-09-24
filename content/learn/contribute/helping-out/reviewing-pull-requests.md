@@ -68,7 +68,7 @@ Maintainers abide by the following rules when merging pull requests:
 3. Controversial PRs cannot be merged unless they have the approval of the Project Lead or two Subject Matter Experts (in the "area" of the PR).
 4. If two Maintainers have approved a controversial PR they can "start the clock" on a PR by adding it to [this queue](https://github.com/orgs/bevyengine/projects/6). If 45 days elapse without SME or Project Lead action (approval, feedback or an explicit request to defer), the PR can be merged by maintainers.
 
-{% callout() %}
+{% <callout> %}
 To read more on Maintainers, check out our section on them in our [The Bevy Organization](@/learn/contribute/project-information/bevy-organization.md#maintainer) page.
-{% end %}
+{% </callout> %}
 

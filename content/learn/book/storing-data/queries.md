@@ -143,7 +143,7 @@ fn apply_poison(mut poisoned: Query<&mut Life, With<Poisoned>>) {
 }
 ```
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 
 You can include multiple queries within a single system, allowing you to access component data in more flexible ways.
 But, if Bevy is handing out mutable references to component data in safe Rust, how does it ensure that users don't invoke undefined behavior due to the forbidden [mutable aliasing]?
@@ -159,7 +159,7 @@ If you run into this you'll be pointed to the [B0002] error page, which has advi
 [`Access`]: https://docs.rs/bevy/latest/bevy/ecs/query/struct.Access.html
 [`Without`]: https://docs.rs/bevy/latest/bevy/ecs/prelude/struct.Without.html
 [B0002]: https://bevy.org/learn/errors/b0002/
-{% end %}
+{% </callout> %}
 
 By changing our [`QueryData`] terms from `&Life` to `&mut Life`, we change the type of [query item] returned.
 This also changes the type of object we get when we iterate over our queries.

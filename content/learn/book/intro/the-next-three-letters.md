@@ -78,14 +78,14 @@ fn main() {
 }
 ```
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 Bevy queries let you update massive amounts of game data in a tight, cache-friendly loop.
 
 Going back to our database analogy, a query is a lot like a [SQL SELECT statement](https://www.w3schools.com/sql/sql_select.asp). Using the previous example:
 
 - `Query<&mut Poison>` would be similar to `SELECT Poison FROM World`.
 - `Query<(&Poison, &mut Health)>` would be similar to `SELECT Poison, Health FROM World`.
-{% end %}
+{% </callout> %}
 
 Queries have a lot more functionality than what's shown here.
 You can request optional components, fetch the [`Entity`] associated with each item, add query filters, and much more!

@@ -117,7 +117,7 @@ fn setup_audio_settings(world: &mut World) {
 }
 ```
 
-{% callout(type="warning") %}
+{% <callout type="warning"> %}
 **Caution**
 
 Use care when accessing resources which may not exist.
@@ -135,7 +135,7 @@ fn audio_settings_system(settings_res: Option<Res<AudioSettings>>) {
 [`Res`]: https://docs.rs/bevy/latest/bevy/ecs/system/struct.Res.html
 [`ResMut`]: https://docs.rs/bevy/latest/bevy/ecs/system/struct.ResMut.html
 
-{% end %}
+{% </callout> %}
 
 ## Resources Vs Singleton Entities
 

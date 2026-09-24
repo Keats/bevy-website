@@ -1,2 +1,4 @@
+{% component load_markdown(md_path) %}
 {% set markdown_content = load_data(path=md_path) %}
 {{ markdown_content }}
+{% endcomponent load_markdown %}

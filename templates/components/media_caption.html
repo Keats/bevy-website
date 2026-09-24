@@ -1,0 +1,11 @@
+{% component media_caption(text, url="") %}
+{# Prefix https:// to avoid throwing markdown lint errors. Sometimes we do dumb things for good reasons #}
+{# Whitespace is trimmed so the markdown pass keeps this as one HTML block. #}
+<div style="font-size: 1.0rem; margin-top: -1.5rem !important;" class="release-feature-authors">
+{%- if url %}
+  <a href="https://{{ url }}">{{ text }}</a>
+{%- else %}
+  {{ text }}
+{%- endif %}
+</div>
+{% endcomponent media_caption %}

@@ -21,7 +21,7 @@ folder are automatically processed by the registered processors to produce the g
 of assets. Your game will automatically use the processed assets (without needing to change anything
 else).
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 
 While it is possible to enable asset processing just before publishing to do steps like compression,
 we **strongly** recommend users choose at the beginning of their project whether to use processing
@@ -31,7 +31,7 @@ asset - these have entirely different structures! There is no guarantee (intenti
 processed asset has the same type as the original asset. Another way to think of asset processing is
 as an **import process**: importing a file could import it as another type entirely.
 
-{% end %}
+{% </callout> %}
 
 The first step to enable asset processing is to set the `AssetPlugin::mode` accordingly:
 
@@ -54,7 +54,7 @@ Now all that's left to do is to add processors to start processing assets. For e
 `compressed_image_saver` feature will automatically add an asset processor for `.png` files to
 compress and write them (internally) as the `.basisu` file format.
 
-{% callout(type="warning") %}
+{% <callout type="warning"> %}
 
 By default, processed assets are written to `imported_assets/` (as opposed to the "regular" assets
 directory of `assets/`). **Do not** check in the processed assets as to your version control. The
@@ -66,7 +66,7 @@ In contrast, when publishing, you should be publishing your `imported_assets/` d
 `assets/` directory. `imported_assets/` contains the game-ready assets which is what your published
 game should use!
 
-{% end %}
+{% </callout> %}
 
 ## Writing Your Own Asset Processors
 
@@ -250,7 +250,7 @@ processor, its settings are boring since they are just `()`).
 "Load" meta files can be used **even without asset processing**. They are very powerful when
 combined with configurable [`AssetLoader`]s.
 
-{% callout(type="info") %}
+{% <callout type="info"> %}
 
 A common use case for these "load" meta files is to set the [`RenderAssetUsages`] for an asset.
 Setting render assets like meshes or textures to use [`RenderAssetUsages::RENDER_WORLD`] only allows
@@ -259,7 +259,7 @@ can be a very worthwhile optimization**. Of course this comes with caveats: sinc
 longer present on the CPU, it can't be used by regular systems. Most meshes and textures aren't used
 in this way anyway though.
 
-{% end %}
+{% </callout> %}
 
 [`Process`]: https://docs.rs/bevy/latest/bevy/asset/processor/trait.Process.html
 [`LoadTransformAndSave`]: https://docs.rs/bevy/latest/bevy/asset/processor/struct.LoadTransformAndSave.html
