@@ -13,10 +13,7 @@
       {% set class = class ~ " active_draft" %}
     {% endif %}
   {% endif %}
-  {% set subsections = [] %}
-  {% for section in menu_section.subsections %}
-    {% set_global subsections = [...subsections, get_section(path=section)] %}
-  {% endfor %}
+  {% set subsections = [get_section(path=s) for s in menu_section.subsections] %}
   {% set pages_and_sections = [...menu_section.pages, ...subsections] | sort(attribute="extra.weight") %}
   {% if pages_and_sections %}
     {% set label_class = label_class ~ " tree-menu__label--with-chevron" %}
@@ -81,11 +78,7 @@
 {% component docs_menu(root, prefix, @current_path) %}
   <ul class="tree-menu">
     {% set is_migration_guide = current_path is starting_with(pat="/learn/migration-guides") %}
-    {% set subsections = [] %}
-    {% for subsection in root.subsections %}
-      {% set proper_section = get_section(path=subsection) %}
-      {% set_global subsections = [...subsections, proper_section] %}
-    {% endfor %}
+    {% set subsections = [get_section(path=s) for s in root.subsections] %}
     {% set pages_and_sections = [...root.pages, ...subsections] | sort(attribute="extra.weight") %}
     {% if is_migration_guide %}
       {% for p in pages_and_sections | reverse %}
