@@ -41,7 +41,7 @@
                 {% if next_tier and donor.amount >= next_tier.amount %}
                     {% continue %}
                 {% endif %}
-                {% set_global donors_in_tier = donors_in_tier | concat(with=donor) %}
+                {% set_global donors_in_tier = [...donors_in_tier, donor] %}
             {% endif %}
         {% endfor %}
     {% endif %}
@@ -91,12 +91,12 @@
 {% endfor %}
 
 {% if donors.donor %}
-    {% set past_donors = donors.donor | filter(attribute="past", value=true) | filter(attribute="name") | sort(attribute="amount") | reverse %}
+    {% set past_donors = [d for d in donors.donor if d.past and d.name] | sort(attribute="amount") | reverse %}
     {% if past_donors %}
         <h2 class="past-donors-title">Past Donors</h2>
         <div class="past-donor">
         {% for donor in past_donors %}
-            {{ donor.name | escape | replace(from=" ", to="&nbsp;") | safe }}{% if not loop.last %},{% endif %}
+            {{ donor.name | escape_html | replace(from=" ", to="&nbsp;") | safe }}{% if not loop.last %},{% endif %}
         {% endfor %}
         </div>
     {% endif %}

@@ -32,33 +32,33 @@
 {% block page_content %}
   <div class="docs-page">
     <div class="docs-content">
-      {% set is_migration_guide = current_path is starting_with("/learn/migration-guides") %}
+      {% set is_migration_guide = current_path is starting_with(pat="/learn/migration-guides") %}
 
       {# Create an array of sections and pages in reading order #}
       {% set all_pages = [] %}
       {% set sections = [] %}
       {% for section in root_section.subsections %}
-        {% set_global sections = sections | concat(with=get_section(path=section)) %}
+        {% set_global sections = [...sections, get_section(path=section)] %}
       {% endfor %}
-      {% set pages_and_sections = root_section.pages | concat(with=sections) | sort(attribute="extra.weight") %}
+      {% set pages_and_sections = [...root_section.pages, ...sections] | sort(attribute="extra.weight") %}
       {% for p in pages_and_sections %}
-        {% set_global all_pages = all_pages | concat(with=p) %}
-        {% if sections is containing(p) %}
+        {% set_global all_pages = [...all_pages, p] %}
+        {% if p in sections %}
           {% set subsections = [] %}
           {% for subsection in p.subsections %}
-            {% set_global subsections = subsections | concat(with=get_section(path=subsection)) %}
+            {% set_global subsections = [...subsections, get_section(path=subsection)] %}
           {% endfor %}
-          {% set pages_and_subsections = p.pages | concat(with=subsections) | sort(attribute="extra.weight") %}
+          {% set pages_and_subsections = [...p.pages, ...subsections] | sort(attribute="extra.weight") %}
           {% for p2 in pages_and_subsections %}
-            {% set_global all_pages = all_pages | concat(with=p2) %}
-            {% if subsections is containing(p2) %}
+            {% set_global all_pages = [...all_pages, p2] %}
+            {% if p2 in subsections %}
               {% set subsections_2 = [] %}
               {% for subsection_2 in p2.subsections %}
-                {% set_global subsections_2 = subsections_2 | concat(with=get_section(path=subsection_2)) %}
+                {% set_global subsections_2 = [...subsections_2, get_section(path=subsection_2)] %}
               {% endfor %}
-              {% set pages_and_subsections_2 = p2.pages | concat(with=subsections_2) | sort(attribute="extra.weight") %}
+              {% set pages_and_subsections_2 = [...p2.pages, ...subsections_2] | sort(attribute="extra.weight") %}
               {% for p3 in pages_and_subsections_2 %}
-                {% set_global all_pages = all_pages | concat(with=p3) %}
+                {% set_global all_pages = [...all_pages, p3] %}
               {% endfor %}
             {% endif %}
           {% endfor %}
@@ -74,7 +74,7 @@
       {% set next_page = false %}
       {% set found_current = false %}
       {% for p in all_pages %}
-        {% set parent_section_path = p.components | slice(end=-1) | concat(with="_index.md") | join(sep="/") %}
+        {% set parent_section_path = [...p.components[:-1], "_index.md"] | join(sep="/") %}
         {% set parent_section = get_section(path=parent_section_path) %}
         {% if found_current %}
           {% if p.extra and p.extra.public_draft %}

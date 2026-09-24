@@ -11,7 +11,7 @@
       <h1 class="warning">This page is hidden because an ancestor is hidden</h1>
     {% endif %}
   {% elif section.components %}
-    {% set next_path = section.components | slice(end=-1) | concat(with="_index.md") | join(sep="/") %}
+    {% set next_path = [...section.components[:-1], "_index.md"] | join(sep="/") %}
     {{ <warning current={false} section={get_section(path=next_path)} /> }}
   {% endif %}
 {% endcomponent warning %}

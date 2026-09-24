@@ -1,6 +1,7 @@
 +++
 title = "Bevy 0.20"
 date = 2026-09-17
+
 [extra]
 show_image = false
 public_draft = 2582

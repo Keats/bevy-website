@@ -1,4 +1,4 @@
 {# joins 2 paths together to form a longer path #}
-{% component path_join(path_a, path_b) %}{{ path_a | split(pat="/") | concat(with=path_b) | join(sep="/") }}{% endcomponent path_join %}
+{% component path_join(path_a, path_b) %}{{ [...(path_a | split(pat="/")), path_b] | join(sep="/") }}{% endcomponent path_join %}
 
 {% component release_path(version, path) %}{{ "./release-content/" ~ version ~ path }}{% endcomponent release_path %}

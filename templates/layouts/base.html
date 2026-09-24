@@ -10,7 +10,7 @@
   {% set_global root_section_paths = ["learn/quick-start", "learn/book", "learn/migration-guides", "learn/advanced-examples", "learn/errors", "learn/contribute"] %}
   {% for root_section_path in root_section_paths %}
     {% set components = root_section_path | split(pat="/") %}
-    {% if section_or_page.components | slice(end=components | length) == components %}
+    {% if section_or_page.components[:components | length] == components %}
       {% set_global root_section = get_section(path=root_section_path ~ "/_index.md") %}
       {% break %}
     {% endif %}
@@ -20,21 +20,21 @@
 {% set current_path = current_path | default(value="/") %}
 
 {% if section and section.title %}
-  {% if section.path is starting_with("/learn/book/") %}
+  {% if section.path is starting_with(pat="/learn/book/") %}
     {% set page_title = "Bevy Book: " ~ section.title %}
-  {% elif section.path is starting_with("/learn/errors/") %}
+  {% elif section.path is starting_with(pat="/learn/errors/") %}
     {% set page_title = "Bevy Errors: " ~ section.title %}
-  {% elif section.path is starting_with("/assets") %}
+  {% elif section.path is starting_with(pat="/assets") %}
     {% set page_title = "Bevy Assets" %}
   {% else %}
     {% set page_title = section.title %}
   {% endif %}
 {% elif page and page.title %}
-  {% if page.path is starting_with("/learn/book/") %}
+  {% if page.path is starting_with(pat="/learn/book/") %}
     {% set page_title = "Bevy Book: " ~ page.title %}
-  {% elif page.path is starting_with("/learn/errors/") %}
+  {% elif page.path is starting_with(pat="/learn/errors/") %}
     {% set page_title = "Bevy Errors: " ~ page.title %}
-  {% elif page.path is starting_with("/assets") %}
+  {% elif page.path is starting_with(pat="/assets") %}
     {% set page_title = "Bevy Assets" %}
   {% else %}
     {% set page_title = page.title %}
@@ -52,20 +52,20 @@
 {% endif %}
 
 {% if section %}
-  {% if section.path is starting_with("/learn/book/") %}
+  {% if section.path is starting_with(pat="/learn/book/") %}
     {% set show_nav_toggle = true %}
-  {% elif section.path is starting_with("/learn/migration-guides/") %}
+  {% elif section.path is starting_with(pat="/learn/migration-guides/") %}
     {% set show_nav_toggle = true %}
-  {% elif section.path is starting_with("/learn/errors/") %}
+  {% elif section.path is starting_with(pat="/learn/errors/") %}
     {% set show_nav_toggle = true %}
-  {% elif section.path is starting_with("/assets/") %}
+  {% elif section.path is starting_with(pat="/assets/") %}
     {% set show_nav_toggle = true %}
-  {% elif section.path is starting_with("/contribute/") %}
+  {% elif section.path is starting_with(pat="/contribute/") %}
     {% set show_nav_toggle = true %}
   {% endif %}
 {% elif page %}
-  {% if page.path is starting_with("/learn/book/") or page.path is starting_with("/learn/migration-guides/") or page.path is starting_with("/learn/errors/") or page.path
-    is starting_with("/assets/") or page.path is starting_with("/contribute/") %}
+  {% if page.path is starting_with(pat="/learn/book/") or page.path is starting_with(pat="/learn/migration-guides/") or page.path is starting_with(pat="/learn/errors/") or page.path
+    is starting_with(pat="/assets/") or page.path is starting_with(pat="/contribute/") %}
     {% set show_nav_toggle = true %}
   {% endif %}
 {% endif %}
@@ -80,7 +80,7 @@
     <meta property="og:title" content="{{ page_title }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://bevy.org{{ path }}" />
-    {% if page.extra.image %}
+    {% if page?.extra?.image %}
     <meta property="og:image"
           content="{{ "https://bevy.org" ~ current_path ~ page.extra.image }}" />
     {% else %}
@@ -88,9 +88,9 @@
           content="https://bevy.org/assets/bevy_logo_fill.png" />
     {% endif %}
     <meta property="og:description"
-      {% if page.description %}
+      {% if page?.description %}
         content="{{ page.description }}"
-      {% elif page.content %}
+      {% elif page?.content %}
         content="{{ page.content | striptags | truncate(length=150) }}"
       {% else %}
         content="Bevy is a refreshingly simple data-driven game engine built in Rust. It is free and open-source forever!" 
@@ -103,7 +103,7 @@
     <meta name="robots" content="noindex, nofollow, noarchive">
     {% endif %}
 
-    <title>{% if page.extra.public_draft or section.extra.public_draft %}[DRAFT] {% endif -%}{{ page_title }}</title>
+    <title>{% if page?.extra?.public_draft or section?.extra?.public_draft %}[DRAFT] {% endif -%}{{ page_title }}</title>
     {% block head_extensions %}{% endblock head_extensions %}
     <script async src="https://plausible.io/js/pa-Y3chmKZU0FVsmsgC432RR.js"></script>
     <script>

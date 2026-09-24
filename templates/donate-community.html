@@ -72,7 +72,7 @@
                             {%- endif -%}">{{ post.title }}</div>
                 {% if post.extra.profile_picture %}
                   <div class="card-profile-picture">
-                    {% if post.extra.profile_picture is starting_with("https://") %}
+                    {% if post.extra.profile_picture is starting_with(pat="https://") %}
                       <img src="{{ post.extra.profile_picture }}"
                             alt="{{ post.title }}'s profile picture"
                             width="64"
@@ -186,7 +186,7 @@
                         <div class="people-role people-role-card people-role-project-lead">{{ role }}</div>
                       {% elif role == "Maintainer" %}
                         <div class="people-role people-role-card people-role-maintainer">{{ role }}</div>
-                      {% elif role is starting_with("SME-") %}
+                      {% elif role is starting_with(pat="SME-") %}
                         <div class="people-role people-role-card people-role-sme">{{ role }}</div>
                       {% else %}
                         <div class="people-role">{{ role }}</div>

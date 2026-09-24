@@ -2,19 +2,19 @@
   {% if section_or_page %}
     {% if section_or_page.extra.header_message %}
       {{ section_or_page.extra.header_message }}
-    {% elif section_or_page.path is starting_with("/learn/book/") %}
+    {% elif section_or_page.path is starting_with(pat="/learn/book/") %}
       The Book
-    {% elif section_or_page.path is starting_with("/learn/migration-guides/") %}
+    {% elif section_or_page.path is starting_with(pat="/learn/migration-guides/") %}
       Migration Guides
-    {% elif section_or_page.path is starting_with("/learn/errors/") %}
+    {% elif section_or_page.path is starting_with(pat="/learn/errors/") %}
       Errors
-    {% elif section_or_page.path is starting_with("/learn/quick-start/") %}
+    {% elif section_or_page.path is starting_with(pat="/learn/quick-start/") %}
       Quick Start
-    {% elif section_or_page.path is starting_with("/learn/advanced-examples") %}
+    {% elif section_or_page.path is starting_with(pat="/learn/advanced-examples") %}
       Advanced Examples
-    {% elif section_or_page.path is starting_with("/learn/contribute/") %}
+    {% elif section_or_page.path is starting_with(pat="/learn/contribute/") %}
       Contribute
-    {% elif section_or_page.path is starting_with("/news/") %}
+    {% elif section_or_page.path is starting_with(pat="/news/") %}
       News
     {% elif section_or_page.path == "/" %}
       Features

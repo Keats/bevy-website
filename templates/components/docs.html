@@ -15,9 +15,9 @@
   {% endif %}
   {% set subsections = [] %}
   {% for section in menu_section.subsections %}
-    {% set_global subsections = subsections | concat(with=get_section(path=section)) %}
+    {% set_global subsections = [...subsections, get_section(path=section)] %}
   {% endfor %}
-  {% set pages_and_sections = menu_section.pages | concat(with=subsections) | sort(attribute="extra.weight") %}
+  {% set pages_and_sections = [...menu_section.pages, ...subsections] | sort(attribute="extra.weight") %}
   {% if pages_and_sections %}
     {% set label_class = label_class ~ " tree-menu__label--with-chevron" %}
     <input id="{{ id }}"
@@ -44,9 +44,9 @@
     {% if pages_and_sections %}
       <ul class="tree-menu">
         {% for p in pages_and_sections %}
-          {% if subsections is containing(p) %}
+          {% if p in subsections %}
             {{ <docs_menu_section_row prefix menu_section={p} /> }}
-          {% elif menu_section.pages is containing(p) %}
+          {% elif p in menu_section.pages %}
             {{ <docs_menu_page_row prefix menu_page={p} /> }}
           {% endif %}
         {% endfor %}
@@ -80,26 +80,26 @@
 {% endcomponent docs_menu_page_row %}
 {% component docs_menu(root, prefix, @current_path) %}
   <ul class="tree-menu">
-    {% set is_migration_guide = current_path is starting_with("/learn/migration-guides") %}
+    {% set is_migration_guide = current_path is starting_with(pat="/learn/migration-guides") %}
     {% set subsections = [] %}
     {% for subsection in root.subsections %}
       {% set proper_section = get_section(path=subsection) %}
-      {% set_global subsections = subsections | concat(with=proper_section) %}
+      {% set_global subsections = [...subsections, proper_section] %}
     {% endfor %}
-    {% set pages_and_sections = root.pages | concat(with=subsections) | sort(attribute="extra.weight") %}
+    {% set pages_and_sections = [...root.pages, ...subsections] | sort(attribute="extra.weight") %}
     {% if is_migration_guide %}
       {% for p in pages_and_sections | reverse %}
-        {% if subsections is containing(p) %}
+        {% if p in subsections %}
           {{ <docs_menu_section_row prefix menu_section={p} /> }}
-        {% elif root.pages is containing(p) %}
+        {% elif p in root.pages %}
           {{ <docs_menu_page_row prefix menu_page={p} /> }}
         {% endif %}
       {% endfor %}
     {% else %}
       {% for p in pages_and_sections %}
-        {% if subsections is containing(p) %}
+        {% if p in subsections %}
           {{ <docs_menu_section_row prefix menu_section={p} /> }}
-        {% elif root.pages is containing(p) %}
+        {% elif p in root.pages %}
           {{ <docs_menu_page_row prefix menu_page={p} /> }}
         {% endif %}
       {% endfor %}

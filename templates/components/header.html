@@ -7,7 +7,7 @@
     {% set route = path %}
   {% endif %}
   {% set currently_home = path == home and lower_current_path == home %}
-  {% set is_active = lower_current_path is starting_with("/"~name | lower) or currently_home %}
+  {% set is_active = lower_current_path is starting_with(pat="/"~name | lower) or currently_home %}
   {% set class = "main-menu__link" %}
   {% if is_active %}
     {% set class = class~" main-menu__link--active" %}
