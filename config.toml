@@ -15,6 +15,13 @@ build_search_index = true
 
 generate_feeds = true
 feed_limit = 1000
+# Not planning to use tera on generated pages
+skip_content_templating = [
+    "assets/**",
+    "examples/**",
+    "community/**",
+    "learn/errors/**",
+]
 
 [markdown.highlighting]
 
