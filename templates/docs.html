@@ -74,8 +74,6 @@
       {% set next_page = false %}
       {% set found_current = false %}
       {% for p in all_pages %}
-        {% set parent_section_path = [...p.components[:-1], "_index.md"] | join(sep="/") %}
-        {% set parent_section = get_section(path=parent_section_path) %}
         {% if found_current %}
           {% if p.extra and p.extra.public_draft %}
             {% continue %}
