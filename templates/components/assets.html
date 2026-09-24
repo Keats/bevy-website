@@ -1,5 +1,4 @@
-{% import "macros/images.html" as image_macros %}
-{% macro init_svg() %}
+{% component init_svg() %}
   <svg class="hidden" version="2.0">
     <defs>
     <symbol id="asset-card__scale-balanced-svg" viewBox="0 0 640 512">
@@ -9,15 +8,15 @@
     </defs>
     <use href="#asset-card__scale-balanced-svg" />
   </svg>
-{% endmacro init_svg %}
-{% macro card(post) %}
+{% endcomponent init_svg %}
+{% component card(post) %}
   <div id="{{ post.title | slugify }}">
     <a class="asset-card" href="{{ post.extra.link }}">
       <div class="asset-card__banner">
         {% if post.extra.nsfw %}<div class="asset-card__blur-overlay"></div>{% endif %}
         <div class="asset-card__title">{{ post.title }}</div>
         {% if post.extra.image %}
-          <img src="{{ image_macros::resize_image(path=post.extra.image, width=370, height=370) }}"
+          <img src="{{ <resize_image path={post.extra.image} width={370} height={370} /> }}"
                 alt="Showcase image"
                 title="Showcase image"
                 loading="lazy" />
@@ -51,8 +50,8 @@
       </div>
     </a>
   </div>
-{% endmacro card %}
-{% macro assets_menu_row(prefix, section_path) %}
+{% endcomponent card %}
+{% component assets_menu_row(prefix, section_path) %}
   {% set section = get_section(path=section_path) %}
   {% set id = prefix ~ '-' ~ section.path | slugify %}
   {% set label_class = "tree-menu__label" %}
@@ -76,21 +75,21 @@
     </div>
     {% if section.subsections %}
       <ul class="tree-menu">
-        {% for s in section.subsections %}{{ self::assets_menu_row(prefix=prefix, section_path=s) }}{% endfor %}
+        {% for s in section.subsections %}{{ <assets_menu_row prefix section_path={s} /> }}{% endfor %}
       </ul>
     {% endif %}
   </li>
-{% endmacro %}
-{% macro assets_menu(root, prefix) %}
+{% endcomponent %}
+{% component assets_menu(root, prefix) %}
   <ul class="tree-menu">
-    {% for s in root.subsections %}{{ self::assets_menu_row(prefix=prefix, section_path=s) }}{% endfor %}
+    {% for s in root.subsections %}{{ <assets_menu_row prefix section_path={s} /> }}{% endfor %}
   </ul>
-{% endmacro %}
-{% macro suggestion(id, img, text, url) %}
+{% endcomponent %}
+{% component suggestion(id, img, text, url) %}
 <a class="suggestion-item" id="{{ id }}" href="{{ url }}" target="_blank">
   <div class="suggestion-item__img_wrapper">
     <img src="{{ img }}" alt="{{ text }} Icon" width="24" height="24">
   </div>
   <div class="suggestion-item__text">{{ text }}</div>
 </a>
-{% endmacro %}
+{% endcomponent %}

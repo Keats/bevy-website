@@ -1,6 +1,4 @@
 {% extends "layouts/page-with-menu.html" %}
-{% import "macros/docs.html" as docs_macros %}
-{% import "macros/base.html" as base_macros %}
 
 {% block theme %}light-mode{% endblock theme %}
 
@@ -20,15 +18,15 @@
 {% endblock head_extensions %}
 
 {% block mobile_page_menu %}
-  {{ docs_macros::docs_menu(prefix="mobile-menu", root=root_section) }}
+  {{ <docs_menu prefix="mobile-menu" root={root_section} /> }}
 {% endblock mobile_page_menu %}
 
 {% block page_menu %}
-  {{ docs_macros::docs_menu(prefix="page-menu", root=root_section ) }}
+  {{ <docs_menu prefix="page-menu" root={root_section} /> }}
 {% endblock page_menu %}
 
 {% block page_name %}
-  {{ base_macros::page_header_message(section_or_page=section_or_page) }}
+  {{ <page_header_message section_or_page /> }}
 {% endblock page_name %}
 
 {% block page_content %}

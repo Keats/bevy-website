@@ -1,11 +1,10 @@
 {% extends "layouts/page-with-menu.html" %}
-{% import "macros/assets.html" as assets_macros %}
 {% block page_name %}Bevy Assets{% endblock page_name %}
-{% block mobile_page_menu %}{{ assets_macros::assets_menu(prefix="mobile-menu", root=section) }}{% endblock mobile_page_menu %}
-{% block page_menu %}{{ assets_macros::assets_menu(prefix="page-menu", root=section) }}{% endblock page_menu %}
+{% block mobile_page_menu %}{{ <assets_menu prefix="mobile-menu" root={section} /> }}{% endblock mobile_page_menu %}
+{% block page_menu %}{{ <assets_menu prefix="page-menu" root={section} /> }}{% endblock page_menu %}
 {% block page_content %}
   <div class="assets">
-    {{ assets_macros::init_svg() }}
+    {{ <init_svg /> }}
     <div class="hidden" data-assets-filters>
       <div class="assets-search">
         <input class="assets-search__input"
@@ -36,7 +35,7 @@
           {% if section.extra.sort_order_reversed %}
             {% set pages = section.pages | reverse %}
           {% endif %}
-          {% for post in pages %}{{ assets_macros::card(post=post) }}{% endfor %}
+          {% for post in pages %}{{ <card post /> }}{% endfor %}
         </div>
       {% endif %}
       {% set subsections = section.subsections %}
@@ -53,7 +52,7 @@
           {% if section.extra.sort_order_reversed %}
             {% set pages = section.pages | reverse %}
           {% endif %}
-          {% for post in pages %}{{ assets_macros::card(post=post) }}{% endfor %}
+          {% for post in pages %}{{ <card post /> }}{% endfor %}
         </div>
       {% endfor %}
     {% endfor %}
@@ -64,10 +63,10 @@
       </div>
 
       <div class="suggestions-list">
-        {{ assets_macros::suggestion(text="Github Q&A", id="suggestion-github", img="/assets/q_and_a.svg", url="https://github.com/bevyengine/bevy/discussions") }}
-        {{ assets_macros::suggestion(text="Docs", id="suggestion-docs", img="/assets/rust-logo-light.svg", url="https://docs.rs/bevy/latest/bevy/") }}
-        {{ assets_macros::suggestion(text="Cheatbook", id="suggestion-cheatbook", img="/assets/book.svg", url="https://bevy-cheatbook.github.io/") }}
-        {{ assets_macros::suggestion(text="Discord", id="suggestion-discord", img="/assets/discord.svg", url="https://discord.com/channels/691052431525675048/1019697973933899910") }}
+        {{ <suggestion text="Github Q&A" id="suggestion-github" img="/assets/q_and_a.svg" url="https://github.com/bevyengine/bevy/discussions" /> }}
+        {{ <suggestion text="Docs" id="suggestion-docs" img="/assets/rust-logo-light.svg" url="https://docs.rs/bevy/latest/bevy/" /> }}
+        {{ <suggestion text="Cheatbook" id="suggestion-cheatbook" img="/assets/book.svg" url="https://bevy-cheatbook.github.io/" /> }}
+        {{ <suggestion text="Discord" id="suggestion-discord" img="/assets/discord.svg" url="https://discord.com/channels/691052431525675048/1019697973933899910" /> }}
       </div>
     </div>
   </div>

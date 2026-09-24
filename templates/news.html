@@ -1,5 +1,4 @@
 {% extends "layouts/base.html" %}
-{% import "macros/images.html" as image_macros %}
 {% block content %}
   <div class="padded-content item-grid">
     {% for page in section.pages %}
@@ -10,7 +9,7 @@
             {% if page.extra.image %}
               {% set image_parent = page.path | replace(from="_index.md", to="") %}
               <img class="link-card__img"
-                    src="{{ image_macros::resize_image(path=image_parent ~ page.extra.image, width=580, height=326) }}"
+                    src="{{ <resize_image path={image_parent ~ page.extra.image} width={580} height={326} /> }}"
                     loading="lazy"
                     alt="An image representing the article" />
             {% else %}

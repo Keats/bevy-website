@@ -1,4 +1,4 @@
-{% macro docs_menu_section_row(prefix, menu_section) %}
+{% component docs_menu_section_row(prefix, menu_section, @current_path) %}
   {% set is_in_branch = menu_section.path in current_path %}
   {% set is_active = current_path == menu_section.path %}
   {% set id = prefix ~ '-' ~ menu_section.path | slugify %}
@@ -38,23 +38,23 @@
         </label>
       {% endif %}
       {% if is_active and menu_section.toc %}
-        {{ self::on_this_page(toc=menu_section.toc, class="tree-menu__toc") }}
+        {{ <on_this_page toc={menu_section.toc} class="tree-menu__toc" /> }}
       {% endif %}
     </div>
     {% if pages_and_sections %}
       <ul class="tree-menu">
         {% for p in pages_and_sections %}
           {% if subsections is containing(p) %}
-            {{ self::docs_menu_section_row(prefix=prefix, menu_section=p) }}
+            {{ <docs_menu_section_row prefix menu_section={p} /> }}
           {% elif menu_section.pages is containing(p) %}
-            {{ self::docs_menu_page_row(prefix=prefix, menu_page=p) }}
+            {{ <docs_menu_page_row prefix menu_page={p} /> }}
           {% endif %}
         {% endfor %}
       </ul>
     {% endif %}
   </li>
-{% endmacro docs_menu_section_row %}
-{% macro docs_menu_page_row(prefix, menu_page) %}
+{% endcomponent docs_menu_section_row %}
+{% component docs_menu_page_row(prefix, menu_page, @current_path) %}
   {% set is_in_branch = menu_page.path in current_path %}
   {% set is_active = current_path == menu_page.path %}
   {% set id = prefix ~ '-' ~ menu_page.path | slugify %}
@@ -73,12 +73,12 @@
     <div class="{{ label_class }}">
       <a class="tree-menu__link" href="{{ menu_page.path }}">{{ menu_page.title }}</a>
       {% if is_active and menu_page.toc %}
-        {{ self::on_this_page(toc=menu_page.toc, class="tree-menu__toc") }}
+        {{ <on_this_page toc={menu_page.toc} class="tree-menu__toc" /> }}
       {% endif %}
     </div>
   </li>
-{% endmacro docs_menu_page_row %}
-{% macro docs_menu(root, prefix) %}
+{% endcomponent docs_menu_page_row %}
+{% component docs_menu(root, prefix, @current_path) %}
   <ul class="tree-menu">
     {% set is_migration_guide = current_path is starting_with("/learn/migration-guides") %}
     {% set subsections = [] %}
@@ -90,23 +90,23 @@
     {% if is_migration_guide %}
       {% for p in pages_and_sections | reverse %}
         {% if subsections is containing(p) %}
-          {{ self::docs_menu_section_row(prefix=prefix, menu_section=p) }}
+          {{ <docs_menu_section_row prefix menu_section={p} /> }}
         {% elif root.pages is containing(p) %}
-          {{ self::docs_menu_page_row(prefix=prefix, menu_page=p) }}
+          {{ <docs_menu_page_row prefix menu_page={p} /> }}
         {% endif %}
       {% endfor %}
     {% else %}
       {% for p in pages_and_sections %}
         {% if subsections is containing(p) %}
-          {{ self::docs_menu_section_row(prefix=prefix, menu_section=p) }}
+          {{ <docs_menu_section_row prefix menu_section={p} /> }}
         {% elif root.pages is containing(p) %}
-          {{ self::docs_menu_page_row(prefix=prefix, menu_page=p) }}
+          {{ <docs_menu_page_row prefix menu_page={p} /> }}
         {% endif %}
       {% endfor %}
     {% endif %}
   </ul>
-{% endmacro %}
-{% macro on_this_page(toc, class="") %}
+{% endcomponent %}
+{% component on_this_page(toc, class="") %}
 <nav aria-label="On This Page" class="on-this-page {{ class }}" data-highlight-intrapage-link>
   {# screen readers will read this as 'Navigation: On This Page' #}
   <ul>
@@ -126,4 +126,4 @@
   {% endfor %}
   </ul>
 </nav>
-{% endmacro %}
+{% endcomponent %}

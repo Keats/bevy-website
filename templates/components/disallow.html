@@ -1,0 +1,13 @@
+{# This component generates robots.txt, which should not be indented #}
+{%- component generate_disallows(disallow, section) -%}
+{%- if disallow or section and section.extra and section.extra.public_draft -%}
+Disallow: {{ section.path }}
+{% for s in section.subsections -%}
+{{ <generate_disallows disallow={true} section={get_section(path=s)} /> }}
+{%- endfor -%}
+{%- else -%}
+{%- for s in section.subsections -%}
+{{ <generate_disallows disallow={false} section={get_section(path=s)} /> }}
+{%- endfor -%}
+{%- endif -%}
+{%- endcomponent generate_disallows -%}

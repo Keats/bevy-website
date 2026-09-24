@@ -1,8 +1,7 @@
 {% extends "layouts/page-with-menu.html" %}
-{% import "macros/assets.html" as assets_macros %}
 {% block page_name %}Examples{% endblock page_name %}
-{% block mobile_page_menu %}{{ assets_macros::assets_menu(prefix="page-menu", root=section) }}{% endblock mobile_page_menu %}
-{% block page_menu %}{{ assets_macros::assets_menu(prefix="page-menu", root=section) }}{% endblock page_menu %}
+{% block mobile_page_menu %}{{ <assets_menu prefix="page-menu" root={section} /> }}{% endblock mobile_page_menu %}
+{% block page_menu %}{{ <assets_menu prefix="page-menu" root={section} /> }}{% endblock page_menu %}
 {% block page_content %}
   <div class="assets">
     <div class="assets-intro media-content">
@@ -25,7 +24,7 @@
           {% if section.extra.sort_order_reversed %}
             {% set pages = section.pages | reverse %}
           {% endif %}
-          {% for post in pages %}{{ assets_macros::card(post=post) }}{% endfor %}
+          {% for post in pages %}{{ <card post /> }}{% endfor %}
         </div>
       {% endif %}
     {% endfor %}

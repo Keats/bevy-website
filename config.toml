@@ -23,7 +23,6 @@ taxonomies = [{ name = "news", feed = true }]
 theme = "bevy-syntax-theme-dark"
 
 extra_themes = ["themes/bevy-syntax-theme-dark.json"]
-extra_grammars = ["grammars/ron.json"]
 
 # error_on_missing_language = true
 

@@ -1,4 +1,4 @@
-{% macro header_item(name, path="", extra_class="", current_path) %}
+{% component header_item(name, path="", extra_class="", @current_path) %}
   {% set lower_current_path = current_path | lower %}
   {% set home = "/" %}
   {% if path == "" %}
@@ -17,4 +17,4 @@
       <span>{{ name }}</span>
     </a>
   </li>
-{% endmacro %}
+{% endcomponent %}

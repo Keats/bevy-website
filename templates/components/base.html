@@ -1,4 +1,4 @@
-{% macro page_header_message(section_or_page) %}
+{% component page_header_message(section_or_page) %}
   {% if section_or_page %}
     {% if section_or_page.extra.header_message %}
       {{ section_or_page.extra.header_message }}
@@ -20,4 +20,4 @@
       Features
     {% endif %}
   {% endif %}
-{% endmacro page_header_message %}
+{% endcomponent page_header_message %}
