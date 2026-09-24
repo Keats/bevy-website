@@ -2,9 +2,7 @@
 {% block content %}
 <div class="example">
   <div class="example__header">
-    {% set total_ancestors = page.ancestors | length %}
-    {% set parent_idx = total_ancestors - 1 %}
-    {% set category = get_section(path=page.ancestors | nth(n=parent_idx)) %}
+    {% set category = get_section(path=page.ancestors[-1]) %}
     <h2 class="example__title">{{ category.title }} / {{ page.title }}</h2>
       <a class="example__back" href="{% block examples_url %}{% endblock examples_url %}"><i class="icon icon--chevron-left"></i> Back to examples</a>
       <a class="example__github"
