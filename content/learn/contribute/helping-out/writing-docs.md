@@ -303,6 +303,6 @@ The Quickstart Guide in particular should assume a lower level of expertise.
    
     This will format markdown files and tell you the issues in HTML files. In order to run the command you should install `markdownlint-cli`, `djlint`, and `typos-cli`. See for installation: <https://github.com/igorshubovych/markdownlint-cli>, <https://www.djlint.com/docs/getting-started/>, and <https://github.com/crate-ci/typos?tab=readme-ov-file#install>.
     
-    {% <callout> %}
-    The CI also includes `editorconfigchecker`, but there isn't an easy way to run this manually, so you should instead rely on CI to validate files with this tool.
-    {% </callout> %}
+   {% <callout> %}
+   The CI also includes `editorconfigchecker`, but there isn't an easy way to run this manually, so you should instead rely on CI to validate files with this tool.
+   {% </callout> %}
