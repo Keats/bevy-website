@@ -17,7 +17,7 @@
       {%- endif -%}
     "/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>{{ last_updated | date(format="%+") }}</updated>
+    <updated>{{ last_updated | date(format="%Y-%m-%dT%H:%M:%S%:z") }}</updated>
     <id>{{ feed_url | safe }}</id>
     {%- for page in pages %}
     {%- if not page.extra.public_draft %}
