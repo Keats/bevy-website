@@ -1,6 +1,6 @@
 +++
 title = "Error in raises"
-date = 2025-11-03
+date = 2025-11-03T10:00:00Z
 authors = ["Alice I. Cecile"]
 +++
 

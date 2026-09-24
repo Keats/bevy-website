@@ -2,7 +2,7 @@
 title = "Profiling"
 insert_anchor_links = "right"
 [extra]
-weight = 0
+weight = 2
 +++
 
 You cannot optimize what you cannot measure.

@@ -1,6 +1,6 @@
 +++
 title = "Raise Alice's Pay"
-date = 2025-03-30
+date = 2025-03-30T10:00:00Z
 authors = ["Alice I. Cecile"]
 +++
 

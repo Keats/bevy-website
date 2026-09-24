@@ -1,6 +1,6 @@
 +++
 title = "Hardware for Benchmarking"
-date = 2025-03-30
+date = 2025-03-30T10:30:00Z
 authors = ["Alice I. Cecile"]
 +++
 

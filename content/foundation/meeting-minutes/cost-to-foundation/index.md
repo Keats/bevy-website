@@ -1,6 +1,6 @@
 +++
 title = "Correctly account for cost to foundation of employees"
-date = 2025-11-03
+date = 2025-11-03T11:00:00Z
 authors = ["Alice I. Cecile"]
 +++
 

@@ -1,6 +1,6 @@
 +++
 title = "Hire Cart"
-date = 2025-03-30
+date = 2025-03-30T10:15:00Z
 authors = ["Alice I. Cecile"]
 +++
 

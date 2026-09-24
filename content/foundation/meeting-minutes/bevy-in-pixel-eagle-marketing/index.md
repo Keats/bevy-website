@@ -1,6 +1,6 @@
 +++
 title = "Allow use of Bevy in Pixel Eagle marketing"
-date = 2025-03-30
+date = 2025-03-30T11:00:00Z
 authors = ["Alice I. Cecile"]
 +++
 

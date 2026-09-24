@@ -1,6 +1,6 @@
 +++
 title = "More relaxed voting rules"
-date = 2024-09-09
+date = 2024-09-09T11:00:00Z
 authors = ["Alice I. Cecile"]
 +++
 

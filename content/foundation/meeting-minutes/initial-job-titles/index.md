@@ -1,6 +1,6 @@
 +++
 title = "Initial job titles"
-date = 2024-04-15
+date = 2024-04-15T11:00:00Z
 authors = ["Alice I. Cecile"]
 +++
 

@@ -1,6 +1,6 @@
 +++
 title = "Conference Allowance"
-date = 2025-03-30
+date = 2025-03-30T10:45:00Z
 authors = ["Alice I. Cecile"]
 +++
 

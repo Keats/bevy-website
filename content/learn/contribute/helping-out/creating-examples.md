@@ -2,7 +2,7 @@
 title = "Creating Examples"
 insert_anchor_links = "right"
 [extra]
-weight = 5
+weight = 6
 +++
 
 Each example in Bevy must be:

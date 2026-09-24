@@ -2,7 +2,7 @@
 title = "Compiling Less Code"
 insert_anchor_links = "right"
 [extra]
-weight = 2
+weight = 3
 +++
 
 As a game engine, Bevy offers a wide variety of functionality out-of-the-box.

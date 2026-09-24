@@ -2,7 +2,7 @@
 title = "Explaining Examples"
 insert_anchor_links = "right"
 [extra]
-weight = 6
+weight = 7
 +++
 
 Writing up an explanation for an example can be helpful for providing context and **telling a story** of how problems are solved by combining different features of Bevy.

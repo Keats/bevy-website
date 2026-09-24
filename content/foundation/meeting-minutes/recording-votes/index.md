@@ -1,6 +1,6 @@
 +++
 title = "Recording who voted for which motions in the minutes"
-date = 2024-09-09
+date = 2024-09-09T10:00:00Z
 authors = ["Alice I. Cecile"]
 +++
 
